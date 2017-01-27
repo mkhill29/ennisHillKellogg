@@ -5,6 +5,7 @@
  */
 package ennishillkellogggame;
 
+import byui.cit260.escapeFromChateau.model.Game;
 import byui.cit260.escapeFromChateau.model.Player;
 
 /**
@@ -18,12 +19,24 @@ public class EnnisHillKelloggGame {
      */
     public static void main(String[] args) {
         Player playerOne = new Player();
-        
+
         playerOne.setName("Fred Flintstone");
         playerOne.setInventory(7.00);
-        
+
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+
+        Game gameOne = new Game();
+
+        gameOne.setTotalCaptures(1);
+        gameOne.setEscapesRemaining(9);
+
+        String gameInfo = gameOne.toString();
+        System.out.println(gameInfo);
+        
+        
+        
+        
     }
-    
+
 }
