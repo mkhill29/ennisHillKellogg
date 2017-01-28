@@ -6,6 +6,8 @@
 package ennishillkellogggame;
 
 import byui.cit260.escapeFromChateau.model.Game;
+import byui.cit260.escapeFromChateau.model.Map;
+import byui.cit260.escapeFromChateau.model.Math;
 import byui.cit260.escapeFromChateau.model.Player;
 
 /**
@@ -34,6 +36,24 @@ public class EnnisHillKelloggGame {
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
         
+        Map mapOne = new Map();
+        
+        mapOne.setRoomName("Dungeon");
+        mapOne.setColumnCount(4);
+        mapOne.setRowCount(4);
+        
+        String roomInfo = mapOne.toString();
+        System.out.println(roomInfo);
+        
+        
+        Math mathAntidote = new Math();
+        
+        mathAntidote.setRoomHeight(6);
+        mathAntidote.setRoomLength(9);
+        mathAntidote.setRoomWidth(12);
+        
+        String mathInfo = mathAntidote.toString();
+        System.out.println(mathInfo);       
         
         
         
