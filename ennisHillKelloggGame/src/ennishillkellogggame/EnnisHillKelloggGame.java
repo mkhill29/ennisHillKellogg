@@ -10,6 +10,9 @@ import byui.cit260.escapeFromChateau.model.Game;
 import byui.cit260.escapeFromChateau.model.Map;
 import byui.cit260.escapeFromChateau.model.Math;
 import byui.cit260.escapeFromChateau.model.Player;
+import byui.cit260.escapeFromChateau.model.Character;
+import byui.cit260.escapeFromChateau.model.Item;
+import byui.cit260.escapeFromChateau.model.Math2;
 
 /**
  *
@@ -60,8 +63,29 @@ public class EnnisHillKelloggGame {
         String mathInfo = mathAntidote.toString();
         System.out.println(mathInfo);       
         
+        Character characterPrisoner = new Character();
         
+        characterPrisoner.setCharacterType(playerInfo);
+        characterPrisoner.setCharacterLocation(roomInfo);
+        
+        String characterInfo = characterPrisoner.toString();
+        System.out.println(characterInfo);
+       
+        Item itemOne = new Item();
+        
+        itemOne.setUse("Lantern");
+        itemOne.setMagicPower("MagicPowers");
+        
+        String itemInfo = itemOne.toString();
+        System.out.println(itemInfo);
+        
+        Math2 mathStone = new Math2();
+        
+        mathStone.setStoneLength(5);
+        mathStone.setStoneWidth(4);
+        mathStone.setStoneHeight(7);
+        String mathTwo = mathStone.toString();
+        System.out.println(mathTwo);
         
     }
-
 }
