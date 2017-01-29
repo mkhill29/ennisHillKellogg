@@ -5,6 +5,7 @@
  */
 package ennishillkellogggame;
 
+import byui.cit260.escapeFromChateau.model.BarrelInKitchen;
 import byui.cit260.escapeFromChateau.model.Game;
 import byui.cit260.escapeFromChateau.model.Map;
 import byui.cit260.escapeFromChateau.model.Math;
@@ -20,7 +21,11 @@ public class EnnisHillKelloggGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        BarrelInKitchen barrelinkitchenOne = new BarrelInKitchen();
+        
         Player playerOne = new Player();
+       
 
         playerOne.setName("Fred Flintstone");
         playerOne.setInventory(7.00);
