@@ -73,8 +73,8 @@ public class EnnisHillKelloggGame {
        
         Item itemOne = new Item();
         
-        itemOne.setUse(playerInfo);
-        itemOne.setMagicPower(mathInfo);
+        itemOne.setUse("Lantern");
+        itemOne.setMagicPower("MagicPowers");
         
         String itemInfo = itemOne.toString();
         System.out.println(itemInfo);
