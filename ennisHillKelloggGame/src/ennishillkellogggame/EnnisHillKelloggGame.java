@@ -26,8 +26,6 @@ public class EnnisHillKelloggGame {
      */
     public static void main(String[] args) {
 
-        BarrelInKitchen barrelinkitchenOne = new BarrelInKitchen();
-
         Player playerOne = new Player();
 
         playerOne.setName("Fred Flintstone");
@@ -88,7 +86,7 @@ public class EnnisHillKelloggGame {
 
         Room roomOne = new Room();
 
-        roomOne.setDiscription("8X8ftroom, one bared window, sink and bed");
+        roomOne.setDiscription("8X8ftroom, one barred window, sink and bed");
         roomOne.setItemsAvailable("Toilet paper, blanket, chair");
         roomOne.setPortals("Barred Door, Barred Window");
         roomOne.setRow(1);
@@ -98,6 +96,15 @@ public class EnnisHillKelloggGame {
 
         String roomOneInfo = roomOne.toString();
         System.out.println(roomOneInfo);
+
+        BarrelInKitchen barrelinkitchenOne = new BarrelInKitchen();
+
+        barrelinkitchenOne.setHeight(5);
+        barrelinkitchenOne.setRadiusAtMiddle(8);
+        barrelinkitchenOne.setRadiusAtTopAndBottom(4);
+
+        String barrelInKitchenOneInfo = barrelinkitchenOne.toString();
+        System.out.println(barrelInKitchenOneInfo);
 
     }
 
