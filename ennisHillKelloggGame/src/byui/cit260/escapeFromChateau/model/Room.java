@@ -14,6 +14,7 @@ import java.util.Objects;
  */
 public class Room implements Serializable {
 
+    /*private attributes;*/
     private String discription;
     private String itemsAvailable;
     private String portals;
