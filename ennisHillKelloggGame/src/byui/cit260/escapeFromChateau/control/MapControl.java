@@ -9,6 +9,39 @@ package byui.cit260.escapeFromChateau.control;
  *
  * @author Kristine Hill
  */
-public class MapControl {
+/********************
+ * public class MapControl {
+  
+  
+   * public String movement(double row, double column, String direction); {
+        String direction = 
+    
+         if(direction == "north" && row == 0) {
+                 
+            return false; 
+         }
+        if(direction == south && row == 4){
+                
+            return false; 
+        }
+            
+        if(direction == east && column == 4){
+                
+            return false;
+        }
+        if(direction == west && column == 0){
+                
+            return false;
+         
+        }
+        
+        return true;
+        
+            String location = row "," column;
+        
+         return location
+         
+}
     
 }
+************************/ 
