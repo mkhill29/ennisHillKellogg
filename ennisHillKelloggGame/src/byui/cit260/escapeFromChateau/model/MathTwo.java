@@ -12,52 +12,47 @@ import java.io.Serializable;
  * @author Heidi Ennis
  */
 public class MathTwo implements Serializable{
-
-    private int radiusAtTopAndBottom;
-    private int radiusAtMiddle;
-    private int height;
+    
+    //class instance variables
+    private double triangleLockSideA;
+    private double triangleLockSideB;
+    private double trianlgeLockSideC;
 
     public MathTwo() {
     }
-    
-    
 
-    public int getRadiusAtTopAndBottom() {
-        return radiusAtTopAndBottom;
+    public double getTriangleLockSideA() {
+        return triangleLockSideA;
     }
 
-    public void setRadiusAtTopAndBottom(int radiusAtTopAndBottom) {
-        this.radiusAtTopAndBottom = radiusAtTopAndBottom;
+    public void setTriangleLockSideA(double triangleLockSideA) {
+        this.triangleLockSideA = triangleLockSideA;
     }
 
-    public int getRadiusAtMiddle() {
-        return radiusAtMiddle;
+    public double getTriangleLockSideB() {
+        return triangleLockSideB;
     }
 
-    public void setRadiusAtMiddle(int radiusAtMiddle) {
-        this.radiusAtMiddle = radiusAtMiddle;
+    public void setTriangleLockSideB(double triangleLockSideB) {
+        this.triangleLockSideB = triangleLockSideB;
     }
 
-    public int getHeight() {
-        return height;
+    public double getTrianlgeLockSideC() {
+        return trianlgeLockSideC;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    public void setTrianlgeLockSideC(double trianlgeLockSideC) {
+        this.trianlgeLockSideC = trianlgeLockSideC;
+        
     }
-
+//I need to find out why this says Double.double twice 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + this.radiusAtTopAndBottom;
-        hash = 97 * hash + this.radiusAtMiddle;
-        hash = 97 * hash + this.height;
+        int hash = 5;
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.triangleLockSideA) ^ (Double.doubleToLongBits(this.triangleLockSideA) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.triangleLockSideB) ^ (Double.doubleToLongBits(this.triangleLockSideB) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.trianlgeLockSideC) ^ (Double.doubleToLongBits(this.trianlgeLockSideC) >>> 32));
         return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "BarrelInKitchen{" + "radiusAtTopAndBottom=" + radiusAtTopAndBottom + ", radiusAtMiddle=" + radiusAtMiddle + ", height=" + height + '}';
     }
 
     @Override
@@ -72,18 +67,15 @@ public class MathTwo implements Serializable{
             return false;
         }
         final MathTwo other = (MathTwo) obj;
-        if (this.radiusAtTopAndBottom != other.radiusAtTopAndBottom) {
+        if (Double.doubleToLongBits(this.triangleLockSideA) != Double.doubleToLongBits(other.triangleLockSideA)) {
             return false;
         }
-        if (this.radiusAtMiddle != other.radiusAtMiddle) {
+        if (Double.doubleToLongBits(this.triangleLockSideB) != Double.doubleToLongBits(other.triangleLockSideB)) {
             return false;
         }
-        if (this.height != other.height) {
+        if (Double.doubleToLongBits(this.trianlgeLockSideC) != Double.doubleToLongBits(other.trianlgeLockSideC)) {
             return false;
         }
         return true;
     }
-    
-
-    
 }

@@ -5,7 +5,7 @@
  */
 package ennishillkellogggame;
 
-import byui.cit260.escapeFromChateau.model.BarrelInKitchen;
+import byui.cit260.escapeFromChateau.model.MathTwo;
 import byui.cit260.escapeFromChateau.model.Game;
 import byui.cit260.escapeFromChateau.model.Map;
 import byui.cit260.escapeFromChateau.model.Math;
@@ -97,11 +97,9 @@ public class EnnisHillKelloggGame {
         String roomOneInfo = roomOne.toString();
         System.out.println(roomOneInfo);
 
-        BarrelInKitchen barrelinkitchenOne = new BarrelInKitchen();
+        MathTwo barrelinkitchenOne = new MathTwo();
 
-        barrelinkitchenOne.setHeight(5);
-        barrelinkitchenOne.setRadiusAtMiddle(8);
-        barrelinkitchenOne.setRadiusAtTopAndBottom(4);
+      
 
         String barrelInKitchenOneInfo = barrelinkitchenOne.toString();
         System.out.println(barrelInKitchenOneInfo);
