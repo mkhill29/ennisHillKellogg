@@ -143,7 +143,7 @@ public class MathLockControlTest {
 
         triangleLockSideC = 1;
 
-        expResult = 0; //Expected output returned value
+        expResult = 1.5; //Expected output returned value
 
         //Call function to run test
         result = instance.halfTotalParimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
@@ -167,7 +167,7 @@ public class MathLockControlTest {
 
         triangleLockSideC = 1;
 
-        expResult = 0; //Expected output returned value
+        expResult = 2; //Expected output returned value
 
         //Call function to run test
         result = instance.halfTotalParimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
@@ -191,7 +191,7 @@ public class MathLockControlTest {
 
         triangleLockSideC = 0;
 
-        expResult = 0; //Expected output returned value
+        expResult = 2.5; //Expected output returned value
 
         //Call function to run test
         result = instance.halfTotalParimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
@@ -207,7 +207,7 @@ public class MathLockControlTest {
      * Test of halfTotalParimeter method, of class MathLockControl.
      */
     @Test
-    public void testHalfTotalParimeter() {
+    public void testhalfTotalParimeter() {
         System.out.println("halfTotalParimeter");
         double triangleLockSideA = 0.0;
         double triangleLockSideB = 0.0;
@@ -217,7 +217,7 @@ public class MathLockControlTest {
         double result = instance.halfTotalParimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
 }
