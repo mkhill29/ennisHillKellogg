@@ -5,8 +5,6 @@
  */
 package byui.cit260.escapeFromChateau.control;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -15,29 +13,17 @@ import static org.junit.Assert.*;
  * @author Heidi Ennis
  */
 public class MathLockControlTest {
-
+    
     public MathLockControlTest() {
     }
 
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
-
+    /**
+     * Test of halfTotalParimeter method, of class MathLockControl.
+     */
     @Test
-    public void testSomeMethod() {
-
-        System.out.println("calculateHalfPerimeter ");
-        /**
-         * ****************************
-         * Test Case #1
-         ****************************
-         */
-
-        System.out.println("\tTest case #1");
+    public void testHalfTotalParimeter() {
+        
+         System.out.println("\tTest case #1");
 
         //Input values for Test Case #1
         double triangleLockSideA = 3.0;
@@ -198,26 +184,27 @@ public class MathLockControlTest {
 
         //Compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        
     }
-
-    /**
-     * Test of halfTotalParimeter method, of class MathLockControl.
-     */
-    @Test
-    public void testhalfTotalParimeter() {
-        System.out.println("halfTotalParimeter");
-        double triangleLockSideA = 0.0;
-        double triangleLockSideB = 0.0;
-        double triangleLockSideC = 0.0;
-        MathLockControl instance = new MathLockControl();
-        double expResult = 0.0;
-        double result = instance.halfTotalParimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-      
-    }
-
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
