@@ -12,8 +12,8 @@ import java.util.Objects;
  *
  * @author Kristine Hill
  */
-public class Math implements Serializable{
-    
+public class Math implements Serializable {
+
     //class instance variables
     private double roomWidth;
     private double roomLength;
@@ -21,8 +21,6 @@ public class Math implements Serializable{
 
     public Math() {
     }
-    
-    
 
     public double getRoomWidth() {
         return roomWidth;
@@ -85,7 +83,5 @@ public class Math implements Serializable{
         }
         return true;
     }
-    
-    
-    
+
 }

@@ -13,6 +13,7 @@ import byui.cit260.escapeFromChateau.model.Player;
 import byui.cit260.escapeFromChateau.model.Character;
 import byui.cit260.escapeFromChateau.model.Item;
 import byui.cit260.escapeFromChateau.model.Math2;
+import byui.cit260.escapeFromChateau.model.Math4;
 import byui.cit260.escapeFromChateau.model.Room;
 
 /**
@@ -104,6 +105,15 @@ public class EnnisHillKelloggGame {
         String barrelInKitchenOneInfo = barrelinkitchenOne.toString();
         System.out.println(barrelInKitchenOneInfo);
 
+        
+        Math4 mathTinyDoor = new Math4();
+
+        mathTinyDoor.setOuncesPerMinute(20);
+        mathTinyDoor.setFuelCapacity(24);
+        mathTinyDoor.setBurnTime(16);
+
+        String mathFour = mathTinyDoor.toString();
+        System.out.println(mathFour);
     }
 
 }
