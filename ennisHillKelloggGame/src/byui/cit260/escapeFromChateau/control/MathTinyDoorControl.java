@@ -13,22 +13,19 @@ public class MathTinyDoorControl {
 
     public double calcFuelFills(double ouncesPerMinute, double fuelCapacity, double burnTime) {
 
-        if (ouncesPerMinute < 0 || ouncesPerMinute > 99) {
+        if (ouncesPerMinute <= 0 || ouncesPerMinute > 99) {
             return -1;
         }
-        if (fuelCapacity < 0 || ouncesPerMinute > 99) {
+        if (fuelCapacity <= 0 || ouncesPerMinute > 99) {
             return -1;
         }
         if (burnTime < 0 || ouncesPerMinute > 99) {
             return -1;
         }
-        
 
         double fills = (burnTime * 60) / (ouncesPerMinute * fuelCapacity);
 
         return fills;
-        
-        
 
     }
 
