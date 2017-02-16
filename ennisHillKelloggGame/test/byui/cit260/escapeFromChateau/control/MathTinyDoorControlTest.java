@@ -69,7 +69,7 @@ public class MathTinyDoorControlTest {
         fuelCapacity = 24.0;
         burnTime = 16.0;
         
-        expResult = -2.0; //Expected output return value
+        expResult = -1.0; //Expected output return value
         
                
         //call function to run test
@@ -90,7 +90,7 @@ public class MathTinyDoorControlTest {
         fuelCapacity = -24.0;
         burnTime = 16.0;
         
-        expResult = -2.0; //Expected output return value
+        expResult = -1.0; //Expected output return value
         
                
         //call function to run test
@@ -111,7 +111,7 @@ public class MathTinyDoorControlTest {
         fuelCapacity = 24.0;
         burnTime = -16.0;
         
-        expResult = -2.0; //Expected output return value
+        expResult = -1.0; //Expected output return value
         
                
         //call function to run test
@@ -132,7 +132,7 @@ public class MathTinyDoorControlTest {
         fuelCapacity = 24.0;
         burnTime = 16.0;
         
-        expResult = 0.0; //Expected output return value
+        expResult = -1.0; //Expected output return value
         
                
         //call function to run test
@@ -153,7 +153,7 @@ public class MathTinyDoorControlTest {
         fuelCapacity = 240.0;
         burnTime = 16.0;
         
-        expResult = 0.2; //Expected output return value
+        expResult = -1.0; //Expected output return value
         
                
         //call function to run test
