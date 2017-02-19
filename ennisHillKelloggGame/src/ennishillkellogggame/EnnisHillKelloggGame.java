@@ -17,6 +17,7 @@ import byui.cit260.escapeFromChateau.model.Math4;
 import byui.cit260.escapeFromChateau.model.Room;
 import citbyui.cit260.escapeFromChateau.view.StartProgramView;
 
+
 /**
  *
  * @author Kristine Hill
@@ -25,6 +26,15 @@ public class EnnisHillKelloggGame {
 
         private static Game currentGame = null;
         private static Player player = null;
+        private static Game clues = null;
+
+    public static Game getClues() {
+        return clues;
+    }
+
+    public static void setClues(Game clues) {
+        EnnisHillKelloggGame.clues = clues;
+    }
         
         public static Game getCurrentGame() {
         return currentGame;
@@ -52,5 +62,12 @@ public class EnnisHillKelloggGame {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
     }
+
+    public static Game clues() {
+        return clues;
+    }
+
+    
+
 
  }

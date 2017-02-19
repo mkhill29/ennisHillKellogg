@@ -34,7 +34,7 @@ public class GameControl {
     }
 
     public static void clues(Game currentGame) {
-        System.out.println("\n*** openClues stub function called ***");
+        System.out.println("\n*** getClues stub function called ***");
     }
     
 }

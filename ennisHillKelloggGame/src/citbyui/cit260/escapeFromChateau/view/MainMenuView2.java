@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class MainMenuView2 {
     
-        private String menu;
+    private String menu;
     private String promptMessage;
         
         public MainMenuView2() {

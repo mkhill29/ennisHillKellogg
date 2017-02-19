@@ -92,12 +92,13 @@ public class HelpMenuView {
     }
 
     private void clues() {
-            // save current game
-            GameControl.clues(EnnisHillKelloggGame.getCurrentGame());
+            //            
             
-            //display game menu
-            GameMenuView gameMenu = new GameMenuView();
-            gameMenu.displayMenu();
+            GameControl.clues(EnnisHillKelloggGame.clues());
+            
+            //display help menu
+            HelpMenuView helpMenu = new HelpMenuView();
+            helpMenu.displayMenu();
     }
 
     private void howToPlay() {
@@ -112,4 +113,10 @@ public class HelpMenuView {
         System.out.println("*** help function called ***");
     }
 
+    private void displayMenu() {
+        System.out.println("*** displayMenu function called ***");
     }
+}
+   
+
+     
