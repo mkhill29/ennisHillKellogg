@@ -137,7 +137,13 @@ public class StartProgramView {
                 
         // Display the main menu view
         mainMenuView.displayMainMenuView();
+        
+        /*HelpMenuView helpMenuView = new HelpMenuView();    //experiment to see if adding these 2 lines makes help menu work.
+        
+        helpMenuView.displayHelpMenuView();                   Doesn't appear to help */
     }
+
+   
       
     }
    

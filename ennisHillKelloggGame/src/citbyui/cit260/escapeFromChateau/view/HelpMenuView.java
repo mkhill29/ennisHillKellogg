@@ -33,7 +33,7 @@ public class HelpMenuView {
        
           boolean done = false; // set flag to not done
           do{
-               // prompt for and get players name
+               // prompt for and get players name***  don't need player's name for help menu
                String menuOption = this.getMenuOption();
                if (menuOption.toUpperCase().equals("X")) // user wants to quit
                    return; // exit the game
@@ -110,7 +110,7 @@ public class HelpMenuView {
     }
 
     private void lookAround() {
-        System.out.println("*** help function called ***");
+        System.out.println("*** lookAround function called ***");
     }
 
     private void displayMenu() {
