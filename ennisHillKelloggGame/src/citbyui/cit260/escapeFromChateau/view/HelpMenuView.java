@@ -94,7 +94,7 @@ public class HelpMenuView {
     private void clues() {
             //            
             
-            GameControl.clues(EnnisHillKelloggGame.clues());
+            GameControl.clues(EnnisHillKelloggGame.getClues());
             
             //display help menu
             HelpMenuView helpMenu = new HelpMenuView();
