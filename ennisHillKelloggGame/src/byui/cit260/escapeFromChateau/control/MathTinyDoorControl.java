@@ -16,10 +16,10 @@ public class MathTinyDoorControl {
         if (ouncesPerMinute <= 0 || ouncesPerMinute > 99) {
             return -1;
         }
-        if (fuelCapacity <= 0 || ouncesPerMinute > 99) {
+        if (fuelCapacity <= 0 || fuelCapacity > 99) {
             return -1;
         }
-        if (burnTime < 0 || ouncesPerMinute > 99) {
+        if (burnTime < 0 || burnTime > 99) {
             return -1;
         }
         

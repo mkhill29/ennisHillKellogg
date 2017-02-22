@@ -5,6 +5,7 @@
  */
 package ennishillkellogggame;
 
+import static byui.cit260.escapeFromChateau.control.GameControl.clues;
 import byui.cit260.escapeFromChateau.model.MathTwo;
 import byui.cit260.escapeFromChateau.model.Game;
 import byui.cit260.escapeFromChateau.model.Map;
@@ -26,17 +27,17 @@ public class EnnisHillKelloggGame {
 
         private static Game currentGame = null;
         private static Player player = null;
-        private static Game clues = null;
+        private static Game savedGame = null;
 
-    public static Game getClues() {
+    /*public static Game getClues() {
         return clues;
     }
 
     public static void setClues(Game clues) {
         EnnisHillKelloggGame.clues = clues;
-    }
+    }*/
         
-        public static Game getCurrentGame() {
+    public static Game getCurrentGame() {
         return currentGame;
     }
 
@@ -52,7 +53,13 @@ public class EnnisHillKelloggGame {
         EnnisHillKelloggGame.player = player;
     }
     
+    public static Game getSavedGame() {
+        return savedGame;
+    }
 
+    public static void setSavedGame(Game savedGame) {
+        EnnisHillKelloggGame.savedGame = savedGame;
+    }
     /**
      * @param args the command line arguments
      */
@@ -63,11 +70,13 @@ public class EnnisHillKelloggGame {
         startProgramView.displayStartProgramView();
     }
 
-    public static Game clues() {
-        return clues;
+    
     }
+
+   
+
+   
 
     
 
 
- }

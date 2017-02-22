@@ -36,6 +36,15 @@ public class GameControl {
     public static void clues(Game currentGame) {
         System.out.println("\n*** getClues stub function called ***");
     }
+
+    public static void createNewGame(Player player) {
+        System.out.println("\n*** createNewGame stub function called ***");
+        
+    }
+
+    public static void loadSavedGame(Game savedGame) {
+        System.out.println("\n*** loadSavedGame stub function called ***");
+    }
     
 }
     

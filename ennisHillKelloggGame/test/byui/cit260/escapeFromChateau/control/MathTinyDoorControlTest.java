@@ -153,7 +153,7 @@ public class MathTinyDoorControlTest {
         fuelCapacity = 240.0;
         burnTime = 16.0;
         
-        expResult = 0.2; //Expected output return value  WHY IS THIS NOT RETURNING -1 AS AN INVALID INPUT???
+        expResult = -1.0; //Expected output return value  WHY IS THIS NOT RETURNING -1 AS AN INVALID INPUT???
         
                
         //call function to run test
