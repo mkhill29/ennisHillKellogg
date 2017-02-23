@@ -18,51 +18,43 @@ import byui.cit260.escapeFromChateau.model.Math4;
 import byui.cit260.escapeFromChateau.model.Room;
 import citbyui.cit260.escapeFromChateau.view.StartProgramView;
 
-
 /**
  *
  * @author Kristine Hill
  */
 public class EnnisHillKelloggGame {
 
-        private static Game currentGame = null;
-        private static Player player = null;
-        private static Game savedGame = null;
+    private static Game currentGame = null;
+    private static Player player = null;
+    private static Game savedGame = null;
+    private static Item itemFeatures = null;
+    private static Item inventory = null;
 
-    /*public static Game getClues() {
-        return clues;
+    public static Item getItemFeatures() {
+        return itemFeatures;
     }
 
-    public static void setClues(Game clues) {
-        EnnisHillKelloggGame.clues = clues;
-    }*/
-        
-    public static Game getCurrentGame() {
-        return currentGame;
+    public static void setItemFeatures(Item itemFeatures) {
+        EnnisHillKelloggGame.itemFeatures = itemFeatures;
     }
 
-    public static void setCurrentGame(Game currentGame) {
-        EnnisHillKelloggGame.currentGame = currentGame;
+    public static Item getInventory() {
+        return inventory;
     }
-
-    public static Player getPlayer() {
-        return player;
+    
+    public static void setInventory(Item inventory) {
+        EnnisHillKelloggGame.inventory = inventory;
     }
 
     public static void setPlayer(Player player) {
-        EnnisHillKelloggGame.player = player;
-    }
+        
     
-    public static Game getSavedGame() {
-        return savedGame;
-    }
 
-    public static void setSavedGame(Game savedGame) {
-        EnnisHillKelloggGame.savedGame = savedGame;
-    }
-    /**
-     * @param args the command line arguments
-     */
+}
+
+    
+     /* @param args the command line arguments
+ */
     public static void main(String[] args) {
 
         // create StartProgramViewOrig and display the start program view
@@ -70,13 +62,15 @@ public class EnnisHillKelloggGame {
         startProgramView.displayStartProgramView();
     }
 
-    
+    public static Game getCurrentGame() {
+       return currentGame;
     }
 
-   
+    public static Player getPlayer() {
+        return player;
+    }
 
-   
-
-    
-
-
+    public static Game getSavedGame() {
+        return savedGame;
+    }
+}

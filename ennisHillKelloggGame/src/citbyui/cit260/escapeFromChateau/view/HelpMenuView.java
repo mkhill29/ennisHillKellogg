@@ -29,7 +29,6 @@ public class HelpMenuView {
                 + "\nC - Clues"
                 + "\nP - How to Play"
                 + "\nM - About Movement"
-                + "\nO - Look Around"
                 + "\nX - Quit"
                 + "\n------------------------------------");
     }
@@ -56,7 +55,7 @@ public class HelpMenuView {
         boolean valid = false; // initialize to not valid
 
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
+            System.out.println("\n" + this.menu);
 
             value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks
@@ -84,9 +83,6 @@ public class HelpMenuView {
                 break;
             case "M": // about movement
                 this.aboutMovement();
-                break;
-            case "O": // look around
-                this.lookAround();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
