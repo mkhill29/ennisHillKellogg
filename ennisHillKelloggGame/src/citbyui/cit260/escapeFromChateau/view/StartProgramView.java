@@ -140,11 +140,11 @@ public class StartProgramView {
                 + "\n=========================================================="
         );
         // Create MainMenuView object
-        MainMenuView2 mainMenuView = new MainMenuView2();
+        MainMenuView mainMenuView = new MainMenuView();
 
         // Display the main menu view
         mainMenuView.displayMainMenuView();
-       
+
     }
 
 }
