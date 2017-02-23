@@ -57,7 +57,7 @@ public class MainMenuView {
         boolean valid = false; // initialize to not valid
 
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
+            System.out.println("\n" + this.menu);
 
             value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks
@@ -117,7 +117,8 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("*** help function called ***");
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.displayHelpMenuView();
     }
 
 }
