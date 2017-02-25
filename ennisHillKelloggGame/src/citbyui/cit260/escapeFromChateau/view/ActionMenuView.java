@@ -42,7 +42,7 @@ public class ActionMenuView {
         
          boolean done = false; // set flag to not done
         do {
-            // prompt for and get players name***  don't need player's name for help menu
+            // prompt for and get players name***  don't need player's name for action menu
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("X")) // user wants to quit
                 return; // exit the game
