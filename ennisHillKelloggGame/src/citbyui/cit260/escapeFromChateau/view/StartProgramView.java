@@ -51,7 +51,7 @@ public class StartProgramView {
         /*
         do
             prompt for and get playersName
-            if playersName == 'Q' then
+            if playersName == 'X' then
                 return
                
             do requested action and display next view
