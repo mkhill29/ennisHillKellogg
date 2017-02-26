@@ -11,20 +11,20 @@ package byui.cit260.escapeFromChateau.control;
  */
 public class MathTinyDoorControl {
 
-    public double calcFuelFills(double ouncesPerMinute, double fuelCapacity, double burnTime) {
+    public double calcFuelFills(double minutesPerOunce, double fuelCapacity, double burnTime) {
 
-        if (ouncesPerMinute <= 0 || ouncesPerMinute > 99) {
+        if (minutesPerOunce <= 0 || minutesPerOunce > 99) {
             return -1;
         }
-        if (fuelCapacity <= 0 || ouncesPerMinute > 99) {
+        if (fuelCapacity <= 0 || fuelCapacity > 99) {
             return -1;
         }
-        if (burnTime < 0 || ouncesPerMinute > 99) {
+        if (burnTime < 0 || burnTime > 99) {
             return -1;
         }
         
 
-        double fills = (burnTime * 60) / (ouncesPerMinute * fuelCapacity);
+        double fills = (burnTime * 60) / (minutesPerOunce * fuelCapacity);
 
         return fills;
         
