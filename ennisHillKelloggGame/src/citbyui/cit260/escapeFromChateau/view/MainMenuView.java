@@ -107,7 +107,7 @@ public class MainMenuView {
 
         //display game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.displayGameMenuView();
     }
 
     private void loadSavedGame() {
@@ -117,8 +117,8 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayHelpMenuView();
     }
 
 }
