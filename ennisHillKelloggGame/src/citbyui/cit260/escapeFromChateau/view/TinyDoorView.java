@@ -23,7 +23,7 @@ public class TinyDoorView {
 
     public TinyDoorView() {
         Random rand = new Random();
-        minutesPerOunce = rand.nextInt(10);
+        minutesPerOunce = rand.next(10);
         fuelCapacity = rand.nextInt(10);
         burnTime = rand.nextInt(10);
         this.doorMessage = "\n****************************************"

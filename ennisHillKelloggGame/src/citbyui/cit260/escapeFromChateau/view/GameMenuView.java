@@ -20,17 +20,19 @@ public class GameMenuView {
     private String promptMessage;
 
     
-    public GameMenuView() {
+    /*public GameMenuView() {
         //constructor
         this.promptMessage();
         this.promptViewMap();
       
 
-    }
+    }*/
     
     
     
-    private void promptMessage() {
+    private void GameMenuView() {
+        this.promptMessage = "\nPlease enter Menu Option:    ";
+        
         System.out.println("\n*********************************"
                 +"\nYou are in the Game Room"
                 +"\nAnd in here you will be able to"
@@ -39,21 +41,21 @@ public class GameMenuView {
                 + "the Map of the Castle.");
     }
     
-   public void displayViewMap() {
+   public void displayGameMenuView() {
         //Math question to be inserted here like in order to find where you are, answer the following Math problem
         
            
         boolean done = false; // set flag to not done
         do {
-            String gameMenuView = this.gameMenuViewOption();
-            if (gameMenuViewOption.toUpperCase().equals("X")) // user wants to quit
-            {
-                return; // exit the game
-            }
-            // do requested action and display the next view
-            done = this.doAction(gameMenuView);
+            String menuOption = this.menuOption();
+            if (menuOption.toUpperCase().equals("X")) // user wants to quit
             
-        }   while (!done);
+                return; // exit the game
+            
+            // do requested action and display the next view
+            done = this.doAction(menuOption);
+            
+        }while (!done);
     }
     
     
