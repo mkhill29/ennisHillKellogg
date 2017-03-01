@@ -37,6 +37,8 @@ public class RoomMenuView {
     }
     
     public void displayRoomMenuView(){
+        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        String value = "";// value to be returned
         
         boolean done = false; // set flag to not done
         do {

@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * @author Heidi Ennis
  */
 public class MathLockControlTest {
-    
+
     public MathLockControlTest() {
     }
 
@@ -21,11 +21,15 @@ public class MathLockControlTest {
      * Test of halfTotalParimeter method, of class MathLockControl.
      */
     @Test
-    public void testHalfTotalParimeter() {
-        
-         System.out.println("\tTest case #1");
+    public void testHalfTotalPerimeter() {
 
-        //Input values for Test Case #1
+        System.out.println("\tTest case #1");
+        /**
+         * ****************************
+         * Test Case #1
+         ***************************
+         */
+   
         double triangleLockSideA = 3.0;
 
         double triangleLockSideB = 4.0;
@@ -38,7 +42,7 @@ public class MathLockControlTest {
         MathLockControl instance = new MathLockControl();
 
         //Call function to run test
-        double result = instance.halfTotalParimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
+        double result = instance.halfTotalPerimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
 
         //Compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -46,7 +50,7 @@ public class MathLockControlTest {
         /**
          * ****************************
          * Test Case #2
-         ****************************
+         ***************************
          */
         System.out.println("\tTest case #2");
 
@@ -60,7 +64,7 @@ public class MathLockControlTest {
         expResult = -1.0; //Expected output returned value
 
         //Call function to run test
-        result = instance.halfTotalParimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
+        result = instance.halfTotalPerimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
 
         //Compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -70,7 +74,7 @@ public class MathLockControlTest {
         /**
          * ****************************
          * Test Case #3
-         ****************************
+         ***************************
          */
         System.out.println("\tTest case #3");
 
@@ -84,7 +88,7 @@ public class MathLockControlTest {
         expResult = -1.0; //Expected output returned value
 
         //Call function to run test
-        result = instance.halfTotalParimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
+        result = instance.halfTotalPerimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
 
         //Compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -93,9 +97,9 @@ public class MathLockControlTest {
         //fail("The test case is a prototype.");
         /**
          * ****************************
-         * Test Case #4
-         ****************************
-         */
+         * Test Case #4 
+         ******************************
+              */
         System.out.println("\tTest case #4");
 
         //Input values for Test Case #4
@@ -108,7 +112,7 @@ public class MathLockControlTest {
         expResult = -1.0; //Expected output returned value
 
         //Call function to run test
-        result = instance.halfTotalParimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
+        result = instance.halfTotalPerimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
 
         //Compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -117,8 +121,7 @@ public class MathLockControlTest {
         //fail("The test case is a prototype.");
         /**
          * ****************************
-         * Test Case #5
-         ****************************
+         * Test Case #5 ***************************
          */
         System.out.println("\tTest case #5");
 
@@ -129,10 +132,10 @@ public class MathLockControlTest {
 
         triangleLockSideC = 1;
 
-        expResult = 1.5; //Expected output returned value
+        expResult = -1.0; //Expected output returned value
 
         //Call function to run test
-        result = instance.halfTotalParimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
+        result = instance.halfTotalPerimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
 
         //Compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -141,70 +144,26 @@ public class MathLockControlTest {
         //fail("The test case is a prototype.");
         /**
          * ****************************
-         * Test Case #6
-         ****************************
+         * Test Case #6 
+         ***************************
          */
         System.out.println("\tTest case #6");
 
         //Input values for Test Case #6
         triangleLockSideA = 3;
 
-        triangleLockSideB = 0;
+        triangleLockSideB = 150;
 
         triangleLockSideC = 1;
 
-        expResult = 2; //Expected output returned value
+        expResult = -1.0; //Expected output returned value
 
         //Call function to run test
-        result = instance.halfTotalParimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
+        result = instance.halfTotalPerimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
 
         //Compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
 
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-        /**
-         * ****************************
-         * Test Case #7
-         ****************************
-         */
-        System.out.println("\tTest case #7");
-
-        //Input values for Test Case #7
-        triangleLockSideA = 3;
-
-        triangleLockSideB = 2;
-
-        triangleLockSideC = 0;
-
-        expResult = 2.5; //Expected output returned value
-
-        //Call function to run test
-        result = instance.halfTotalParimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
-
-        //Compare expected return value with actual value returned
-        assertEquals(expResult, result, 0.0001);
-        
     }
-    
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

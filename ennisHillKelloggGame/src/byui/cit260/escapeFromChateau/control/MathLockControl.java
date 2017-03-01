@@ -11,13 +11,13 @@ package byui.cit260.escapeFromChateau.control;
  */
 public class MathLockControl {
 
-    public double halfTotalParimeter(double triangleLockSideA, double triangleLockSideB, double triangleLockSideC) {
+    public double halfTotalPerimeter(double triangleLockSideA, double triangleLockSideB, double triangleLockSideC) {
 
-        if (triangleLockSideA > 99 || triangleLockSideA < 0) {  //width out of range?
+        if (triangleLockSideA > 99 || triangleLockSideA <= 0) {  //width out of range?
             return -1;
         }
 
-        if (triangleLockSideB < 0 || triangleLockSideB > 99) { //length out of range?
+        if (triangleLockSideB <= 0 || triangleLockSideB > 99) { //length out of range?
 
             return -1;
         }
@@ -26,8 +26,8 @@ public class MathLockControl {
 
             return -1;
         }
-        double halfParimeter = (triangleLockSideA + triangleLockSideB + triangleLockSideC) / 2;
+        double halfPerimeter = (triangleLockSideA + triangleLockSideB + triangleLockSideC) / 2;
 
-        return halfParimeter;
+        return halfPerimeter;
     }
 }
