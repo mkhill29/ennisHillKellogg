@@ -14,9 +14,9 @@ import static jdk.nashorn.tools.ShellFunctions.input;
  *
  * @author Kristine Hill
  */
-public class TinyDoorView {
+public class TinyDoorView extends View {
 
-    private final String doorMessage;
+    protected final String promptMessage;
     private double minutesPerOunce;
     private double fuelCapacity;
     private double burnTime;
@@ -26,7 +26,7 @@ public class TinyDoorView {
         minutesPerOunce = rand.nextInt(10);
         fuelCapacity = rand.nextInt(10);
         burnTime = rand.nextInt(10);
-        this.doorMessage = "\n****************************************"
+        this.promptMessage = "\n****************************************"
                 + "\n You are much too large to pass"
                 + "\n through me! If you are clever, I may"
                 + "\n reveal to you a secret latch that will"
@@ -42,38 +42,10 @@ public class TinyDoorView {
         }
    
 
-    private void displayDoorMessage() {
-        // display door message when openDoor menu option is chosen
-
-        boolean correct = false;
-
-        while (!correct) {
-            System.out.println("\n" + this.doorMessage);
-            String input = this.getInput();
-            
-        
-             // do the requested action and show the next view
-            correct = this.doAction(input);
-            if (!correct) {
-                System.out.println("\nWrong answer - TRY AGAIN\n");
-            }
-
-        }
-    }            
     
-
-    private String getInput() {
-        Scanner keyboard = new Scanner(System.in);   //get infile for keyboard
-        String value = "";   //value to be returned
-
-        value = keyboard.nextLine();   //get next line typed on keyboard
-        value = value.trim();   //trim off leading and trailing blanks
-
-        return value;   //return entered value
-    }
                 
 
-    private boolean doAction(String choice) {
+    public boolean doAction(String choice) {
         
         int playerAnswer = Integer.parseInt(choice);
         

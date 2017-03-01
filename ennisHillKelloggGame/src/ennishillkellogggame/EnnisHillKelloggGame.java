@@ -59,7 +59,7 @@ public class EnnisHillKelloggGame {
 
         // create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+        startProgramView.display();
     }
 
     public static Game getCurrentGame() {
