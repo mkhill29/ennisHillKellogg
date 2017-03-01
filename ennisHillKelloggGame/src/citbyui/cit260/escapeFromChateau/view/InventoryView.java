@@ -15,21 +15,7 @@ import java.util.Scanner;
  */
 public class InventoryView {
 
-    public void displayMainMenuView() {
-        boolean done = false;  // set flag to not done
-        do {
-            //prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) //user wants to quit
-            {
-                return; // exit the game
-            }
-            //do the reqested action and display the next view
-            done = this.doAction(menuOption);
-            
-         } while (!done);
-                 
-    }
+    
     
     private String getMenuOption() {
         System.out.println("\n***  getMenuOption() function called ***");

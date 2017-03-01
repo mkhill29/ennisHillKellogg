@@ -14,10 +14,9 @@ import java.util.Scanner;
  *
  * @Heidi Ennis
  */
-public class GameMenuView {
-
-    private String menu;
-    private String promptMessage;
+public class GameMenuView extends View {
+   
+    protected String promptMessage;
 
     
     /*public GameMenuView() {
@@ -30,35 +29,15 @@ public class GameMenuView {
     
     
     
-    private void GameMenuView() {
-        this.promptMessage = "\nPlease enter Menu Option:    ";
-        
-        System.out.println("\n*********************************"
+    public GameMenuView() {
+           super("\n"
                 +"\nYou are in the Game Room"
                 +"\nAnd in here you will be able to"
                 +"\nSee the Inventory of the items"
-                + " available to you and"
-                + "the Map of the Castle.");
+                +"\n available to you and"
+                +"\nthe Map of the Castle.");
     }
-    
-   public void displayGameMenuView() {
-        //Math question to be inserted here like in order to find where you are, answer the following Math problem
-        
-           
-        boolean done = false; // set flag to not done
-        do {
-            String menuOption = this.menuOption();
-            if (menuOption.toUpperCase().equals("X")) // user wants to quit
-            
-                return; // exit the game
-            
-            // do requested action and display the next view
-            done = this.doAction(menuOption);
-            
-        }while (!done);
-    }
-    
-    
+
     /*private void ViewInventory(); static {
         
     }
@@ -82,14 +61,14 @@ public class GameMenuView {
     
     }
 
-    private boolean doAction(String gameMenuView) {
+    public boolean doAction(String gameMenuView) {
         return false;
       
     }
 
     private void displayMainMenu() {
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMainMenuView();
+        mainMenu.display();
     }
 
     void displayGameMenuView() {

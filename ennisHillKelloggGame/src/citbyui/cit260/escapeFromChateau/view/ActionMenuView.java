@@ -11,16 +11,12 @@ import java.util.Scanner;
  *
  * @author amikellogg
  */
-public class ActionMenuView {
-    
-    private String menu;
-    private String promptMessage;
+public class ActionMenuView extends View{
+ 
+    protected String promptMessage;
     
     public ActionMenuView(){
-        this.promptMessage = "\nPlease enter Menu Option:      ";
-        
-        System.out.println(
-                menu = "\n"
+            super("\n"
                 + "\n------------------------------------"
                 + "\n| Actions Menu                       |"
                 + "\n------------------------------------"
@@ -38,45 +34,7 @@ public class ActionMenuView {
                 + "\n------------------------------------");
     }
     
-    public void displayActionMenuView(){
-        
-         boolean done = false; // set flag to not done
-        do {
-            // prompt for and get players name***  don't need player's name for action menu
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("X")) // user wants to quit
-                return; // exit the game
-            
-            // do requested action and display the next view
-            done = this.doAction(menuOption);
-
-        } while (!done);
-
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
-
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-
-            }
-            break; // end the loop
-        }
-
-        return value; // return the value entered
-    }
-
-    private boolean doAction(String choice) {
+    public boolean doAction(String choice) {
          choice = choice.toUpperCase(); // convert choice to upper case
 
         switch (choice) {
@@ -164,6 +122,6 @@ public class ActionMenuView {
         
          //display action menu
         ActionMenuView actionMenu = new ActionMenuView();
-        actionMenu.displayActionMenu();
+        actionMenu.display();
     }
 }
