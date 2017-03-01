@@ -5,48 +5,79 @@
  */
 package citbyui.cit260.escapeFromChateau.view;
 
+import byui.cit260.escapeFromChateau.control.MathTinyDoorControl;
+import java.util.Random;
 import java.util.Scanner;
+import static jdk.nashorn.tools.ShellFunctions.input;
 
 /**
  *
  * @author Kristine Hill
  */
-/*public class TinyDoorView {
+public class TinyDoorView {
+
+    private final String doorMessage;
+    private double minutesPerOunce;
+    private double fuelCapacity;
+    private double burnTime;
 
     public TinyDoorView() {
-        this.doorMessage();
-        this.tinyDoorChallenge();
-        this.inputMessage();
-    }
-
-    private void doorMessage() {
-        // display door message when openDoor menu option is chosen
-        System.out.println(
-                "\n***************************************************"
+        Random rand = new Random();
+        minutesPerOunce = rand.nextInt(10);
+        fuelCapacity = rand.nextInt(10);
+        burnTime = rand.nextInt(10);
+        this.doorMessage = "\n****************************************"
                 + "\n You are much too large to pass"
                 + "\n through me! If you are clever, I may"
                 + "\n reveal to you a secret latch that will"
                 + "\n open a bigger door for you. You must"
                 + "\n answer a tricky question before I tell"
                 + "\n you the secret!"
-                + "\n*************************************************"
-        );
-    }
+                + "\n**"
+                + "\nIf your lantern burns one ounce of fuel*"
+                + "\n in 20 minutes, and it can hold 24 ounces*"
+                + "\n of fuel, how many times will you need to*"
+                + "\n fill it to have light for 16 hours?*"
+                + "\n*************************************************";
+        }
+   
 
-    private void tinyDoorChallenge() {
-        // display tiny door math challenge
-        System.out.println(
-                "\n**************************************************"
-                + "\n*                                                *"
-                + "\nIf your lantern burns one ounce of fuel          *"
-                + "\n in 20 minutes, and it can hold 24 ounces        *"
-                + "\n of fuel, how many times will you need to        *"
-                + "\n fill it to have light for 16 hours?             *"
-        );
+    private void displayDoorMessage() {
+        // display door message when openDoor menu option is chosen
 
-    private void inputMessage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean correct = false;
+
+        while (!correct) {
+            System.out.println("\n" + this.doorMessage);
+            String input = this.getInput();
+            
+        
+             // do the requested action and show the next view
+            correct = this.doAction(input);
+            if (!correct) {
+                System.out.println("\nWrong answer - TRY AGAIN\n");
+            }
+
+        }
+    }            
+    
+
+    private String getInput() {
+        Scanner keyboard = new Scanner(System.in);   //get infile for keyboard
+        String value = "";   //value to be returned
+
+        value = keyboard.nextLine();   //get next line typed on keyboard
+        value = value.trim();   //trim off leading and trailing blanks
+
+        return value;   //return entered value
     }
-    
-*/
-    
+                
+
+    private boolean doAction(String choice) {
+        
+        int playerAnswer = Integer.parseInt(choice);
+        
+        MathTinyDoorControl mtdc = new MathTinyDoorControl();
+        return mtdc.calcFuelFills(minutesPerOunce, fuelCapacity, burnTime, playerAnswer);
+}
+}

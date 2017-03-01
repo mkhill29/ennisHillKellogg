@@ -32,4 +32,8 @@ public class MathTinyDoorControl {
 
     }
 
+    public boolean calcFuelFills(double minutesPerOunce, double fuelCapacity, double burnTime, double playerAnswer) {
+        return playerAnswer == ((burnTime * 60) / (minutesPerOunce * fuelCapacity));
+    }
+
 }
