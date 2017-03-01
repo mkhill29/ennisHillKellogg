@@ -35,8 +35,8 @@ public class GameMenuView {
                 +"\nYou are in the Game Room"
                 +"\nAnd in here you will be able to"
                 +"\nSee the Inventory of the items"
-                + " available to you and"
-                + "the Map of the Castle.");
+                + "\n available to you and"
+                + "\nthe Map of the Castle.");
     }
     
    public void displayViewMap() {
