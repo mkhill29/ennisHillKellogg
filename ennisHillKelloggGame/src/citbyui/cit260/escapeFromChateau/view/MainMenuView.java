@@ -7,22 +7,15 @@ package citbyui.cit260.escapeFromChateau.view;
 
 import byui.cit260.escapeFromChateau.control.GameControl;
 import ennishillkellogggame.EnnisHillKelloggGame;
-import java.util.Scanner;
-
 /**
- *
  * @author Heidi Ennis
  */
-public class MainMenuView {
-
-    private String menu;
-    private String promptMessage;
+public class MainMenuView extends View{
+   
+    protected String promptMessage;
 
     public MainMenuView() {
-        this.promptMessage = "\nPlease enter Menu Option:    ";
-
-        System.out.println(
-                menu = "\n"
+            super("\n"
                 + "\n------------------------------------"
                 + "\n| Main Menu                        |"
                 + "\n------------------------------------"
@@ -30,53 +23,16 @@ public class MainMenuView {
                 + "\nB - Begin New Game"
                 + "\nL - Load Saved Game"
                 + "\nH - Help"
+                + "\nA - Action Menu"
                 + "\nX - Quit"
                 + "\n------------------------------------");
     }
+    
+    @Override
+    public boolean doAction(String value) {
+       value = value.toUpperCase(); // convert choice to upper case
 
-    public void displayMainMenuView() {
-
-        boolean done = false; // set flag to not done
-        do {
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("X")) // user wants to quit
-            {
-                return; // exit the game
-            }
-            // do requested action and display the next view
-            done = this.doAction(menuOption);
-
-        } while (!done);
-
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.menu);
-
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-
-            }
-            break; // end the loop
-        }
-
-        return value; // return the value entered
-    }
-
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase(); // convert choice to upper case
-
-        switch (choice) {
+        switch (value) {
             case "S": // save a game
                 this.saveCurrentGame();
                 break;
@@ -88,6 +44,9 @@ public class MainMenuView {
                 break;
             case "H": // display help menu
                 this.displayHelpMenu();
+                break;
+            case "A": // display action menu
+                this.displayActionMenu();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -109,6 +68,8 @@ public class MainMenuView {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayGameMenuView();
 
+
+
     }
 
     private void loadSavedGame() {
@@ -119,7 +80,14 @@ public class MainMenuView {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+
+        helpMenu.display();
+    }
+
+    private void displayActionMenu() {
+        ActionMenuView actionMenu = new ActionMenuView();
+        actionMenu.display();
+
     }
 
 }

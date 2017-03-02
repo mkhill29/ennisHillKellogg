@@ -11,8 +11,8 @@ import java.util.Scanner;
  *
  * @author amikellogg
  */
-public class MathStoneView {
-    private String promptMessage;
+public class MathStoneView{
+    protected String promptMessage;
     
     public MathStoneView(){
         this.stoneMessage();
@@ -41,28 +41,11 @@ public class MathStoneView {
       ); 
     }
 
-    private String inputNumbers() {
-        this.promptMessage = ("\nLength: "
-                             +"\nWidth: " 
-                             +"\nHeight: ");
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = "";// value to be returned
-        boolean valid = false; // initialize to not valid
-
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
-
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break; // end the loop
-        }
-
-        return value; // return the value entered
+    private void inputNumbers() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+
+    
     
 }

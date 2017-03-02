@@ -1,4 +1,4 @@
-  /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -14,12 +14,9 @@ import java.util.Scanner;
  *
  * @Heidi Ennis
  */
-public class GameMenuView {
+public class GameMenuView extends View {
 
-    private String menu;
-    private String promptMessage;
-
-    
+    protected String promptMessage;
     /*public GameMenuView() {
         //constructor
         this.promptMessage();
@@ -27,38 +24,28 @@ public class GameMenuView {
       
 
     }*/
-    
-    
-    
-    private void GameMenuView() {
-        this.promptMessage = "\nPlease enter Menu Option:    ";
-        
-        System.out.println("\n*********************************"
-                +"\nYou are in the Game Room"
-                +"\nAnd in here you will be able to"
-                +"\nSee the Inventory of the items"
+    public GameMenuView() {
+        super("\n"
+                + "\nYou are in the Game Room"
+                + "\nAnd in here you will be able to"
+                + "\nSee the Inventory of the items"
                 + "\n available to you and"
                 + "\nthe Map of the Castle.");
-    }
-    
-   public void displayGameMenuView() {
+         //public void displayGameMenuView() {
         //Math question to be inserted here like in order to find where you are, answer the following Math problem
-        
-           
         boolean done = false; // set flag to not done
         do {
             String menuOption = this.menuOption();
             if (menuOption.toUpperCase().equals("X")) // user wants to quit
-            
+            {
                 return; // exit the game
-            
+            }
             // do requested action and display the next view
             done = this.doAction(menuOption);
-            
-        }while (!done);
+
+        } while (!done);
     }
-    
-    
+
     /*private void ViewInventory(); static {
         
     }
@@ -72,24 +59,26 @@ public class GameMenuView {
         System.out.println("*** closeMenu function called ***");
 
     }
-*/
+     */
     private void promptViewMap() {
-      
+
     }
 
     private String gameMenuViewOption() {
         return null;
-    
+
     }
 
-    private boolean doAction(String gameMenuView) {
+    public boolean doAction(String gameMenuView) {
         return false;
-      
+
     }
 
     private void displayMainMenu() {
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMainMenuView();
+
+        mainMenu.display();
+
     }
 
     void displayGameMenuView() {
@@ -97,4 +86,3 @@ public class GameMenuView {
     }
 
 }
-

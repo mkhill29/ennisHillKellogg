@@ -13,17 +13,13 @@ import java.util.Scanner;
  *
  * @author Kristine Hill
  */
-public class RoomMenuView {
+public class RoomMenuView extends View{
     
-    private String menu;
-    private String promptMessage;
+       protected String promptMessage;
     
     public RoomMenuView(){
         
-        this.promptMessage = "\nChoose a menu option";
-        //display when view is created
-        System.out.println(
-                    menu = "\n"
+                super("\n"
                     + "\n----------------------------------------------------"       
                     + "\n|       Room Menu                                  |"
                     + "\n----------------------------------------------------"
@@ -35,51 +31,10 @@ public class RoomMenuView {
                     + "\nI - View inventory"
                     + "\nC - Close menu");
     }
-    
-    public void displayRoomMenuView(){
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = "";// value to be returned
-        
-        boolean done = false; // set flag to not done
-        do {
-            String roomMenuOption = this.getRoomMenuOption();
-            if (roomMenuOption.toUpperCase().equals("X")) // user wants to quit
-            {
-                return; // exit the game
-            }
-            // do requested action and display the next view
-            done = this.doAction(roomMenuOption);
-            
-        }   while (!done);
-        
-    }
-
-    private String getRoomMenuOption() {
-       Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.menu);
-
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-
-            }
-            break; // end the loop
-        }
-
-        return value; // return the value entered
-    }
-    
-    private boolean doAction(String choice) {
+       
+        public boolean doAction(String choice) {
         choice = choice.toUpperCase(); // convert choice to upper case
-        
-        switch (choice) {
+                switch (choice) {
             case "L": // look around
                 this.lookAround();
                 break;
