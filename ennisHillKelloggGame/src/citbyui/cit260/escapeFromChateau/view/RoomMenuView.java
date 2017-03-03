@@ -15,10 +15,8 @@ import java.util.Scanner;
  */
 public class RoomMenuView extends View{
     
-
    
     protected String promptMessage;
-
     
     public RoomMenuView(){
         
@@ -34,10 +32,9 @@ public class RoomMenuView extends View{
                     + "\nI - View inventory"
                     + "\nC - Close menu");
     }
-
-       
- 
-       
+    
+   
+    
     public boolean doAction(String choice) {
         choice = choice.toUpperCase(); // convert choice to upper case
                 switch (choice) {

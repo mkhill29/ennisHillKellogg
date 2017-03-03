@@ -39,12 +39,10 @@ public class TinyDoorView extends View {
                 + "\n of fuel, how many times will you need to*"
                 + "\n fill it to have light for 16 hours?*"
                 + "\n*************************************************";
-
         }
    
 
-
-  
+    
                 
 
     public boolean doAction(String choice) {
@@ -54,5 +52,4 @@ public class TinyDoorView extends View {
         MathTinyDoorControl mtdc = new MathTinyDoorControl();
         return mtdc.calcFuelFills(minutesPerOunce, fuelCapacity, burnTime, playerAnswer);
 }
-
 }

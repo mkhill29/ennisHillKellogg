@@ -67,9 +67,6 @@ public class MainMenuView extends View{
         //display game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayGameMenuView();
-
-
-
     }
 
     private void loadSavedGame() {
@@ -80,14 +77,12 @@ public class MainMenuView extends View{
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-
         helpMenu.display();
     }
 
     private void displayActionMenu() {
         ActionMenuView actionMenu = new ActionMenuView();
         actionMenu.display();
-
     }
 
 }
