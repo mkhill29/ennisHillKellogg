@@ -66,7 +66,7 @@ public class MainMenuView extends View{
 
         //display game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
     }
 
     private void loadSavedGame() {
