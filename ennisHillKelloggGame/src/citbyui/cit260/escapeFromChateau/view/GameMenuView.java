@@ -27,9 +27,7 @@ public class GameMenuView extends View {
                 + "\nthe Map of the Castle.");
     }
 
-    void displayGameMenuView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     public boolean doAction(String gameMenuView) {
         return false;
