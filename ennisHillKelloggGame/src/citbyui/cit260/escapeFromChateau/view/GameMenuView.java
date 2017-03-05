@@ -5,7 +5,6 @@
  */
 package citbyui.cit260.escapeFromChateau.view;
 
-import byui.cit260.escapeFromChateau.control.InventoryControl;
 import ennishillkellogggame.EnnisHillKelloggGame;
 import static java.time.Clock.system;
 import java.util.Scanner;
@@ -24,13 +23,63 @@ public class GameMenuView extends View {
                 + "\nAnd in here you will be able to"
                 + "\nSee the Inventory of the items"
                 + "\n available to you and"
-                + "\nthe Map of the Castle.");
+                + "\nthe Map of the Castle."
+                + "\n"
+                + "\n------------------------------------"
+                + "\n| Game Room Menu                        |"
+                + "\n------------------------------------"
+                + "\nI - Show Inventory"
+                + "\nP - Pick Item From Inventory"
+                + "\nL - List Other Rooms"
+                + "\nH - GoTo Other Room"
+                + "\nX - Quit"
+                + "\n------------------------------------");
     }
 
     
+  @Override
+    public boolean doAction(String value) {
+       value = value.toUpperCase(); // convert choice to upper case
 
-    public boolean doAction(String gameMenuView) {
+        switch (value) {
+            case "I": // save a game
+                this.showInventory();
+                break;
+            case "P": // begin new game
+                this.pickInventoryItem();
+                break;
+            case "L": // display help menu
+                this.listRooms();
+                break;
+            case "G": // display action menu
+                this.goToRoom();
+                break;
+                //TODO need "x"
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        }
+
         return false;
-      
+    }
+    
+    public void showInventory(){
+         System.out.println("\n***showInventory");
+
+    }
+    
+    public void pickInventoryItem(){
+        System.out.println("\n*** pickInventoryItem");
+
+    } 
+    
+    public void listRooms(){
+       System.out.println("\n***listRooms");
+
+    }
+        
+    public void goToRoom(){
+       System.out.println("\n*** goToRoom");
+
     }
 }

@@ -25,6 +25,5 @@ public class InventoryView {
 private boolean doAction(String menuOption)  {
     System.out.println("\n*** doAction() function called ***)");
             return true;
-            
-}
+}       
 }

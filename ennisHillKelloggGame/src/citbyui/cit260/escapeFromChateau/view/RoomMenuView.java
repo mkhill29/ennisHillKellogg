@@ -94,15 +94,12 @@ public class RoomMenuView extends View{
    /* public String getMenu() {
         return menu;
     }
-
     public void setMenu(String menu) {
         this.menu = menu;
     }
-
     public String getPromptMessage() {
         return promptMessage;
     }
-
     public void setPromptMessage(String promptMessage) {
         this.promptMessage = promptMessage;
     }*/

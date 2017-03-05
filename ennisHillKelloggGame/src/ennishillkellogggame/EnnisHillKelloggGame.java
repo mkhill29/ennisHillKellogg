@@ -48,7 +48,7 @@ public class EnnisHillKelloggGame {
 
     public static void setPlayer(Player player) {
         
-    
+    //todo set the player for the EnnisHillKellogGame instance
 
 }
 
