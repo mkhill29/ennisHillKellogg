@@ -13,31 +13,29 @@ import java.util.Scanner;
  *
  * @author Kristine Hill
  */
-public class RoomMenuView extends View{
-    
-   
+public class RoomMenuView extends View {
+
     protected String promptMessage;
-    
-    public RoomMenuView(){
-        
-                super("\n"
-                    + "\n----------------------------------------------------"       
-                    + "\n|       Room Menu                                  |"
-                    + "\n----------------------------------------------------"
-                    + "\nL - Look around (room description and items in room)"
-                    + "\nP - Pick up item"
-                    + "\nF - View item features"
-                    + "\nA - Add item to inventory"
-                    + "\nU - Use item"
-                    + "\nI - View inventory"
-                    + "\nC - Close menu");
+
+    public RoomMenuView() {
+
+        super("\n"
+                + "\n----------------------------------------------------"
+                + "\n|       Room Menu                                  |"
+                + "\n----------------------------------------------------"
+                + "\nL - Look around (room description and items in room)"
+                + "\nP - Pick up item"
+                + "\nF - View item features"
+                + "\nA - Add item to inventory"
+                + "\nU - Use item"
+                + "\nI - View inventory"
+                + "\nT -Tiny Door   "
+                + "\nC - Close menu");
     }
-    
-   
-    
+
     public boolean doAction(String choice) {
         choice = choice.toUpperCase(); // convert choice to upper case
-                switch (choice) {
+        switch (choice) {
             case "L": // look around
                 this.lookAround();
                 break;
@@ -56,6 +54,10 @@ public class RoomMenuView extends View{
             case "I": // View inventory
                 this.viewInventory();
                 break;
+            case "T": 
+                TinyDoorView tinyDoorView = new TinyDoorView();
+                tinyDoorView.display();
+                break;
             case "C": // Close menu
                 this.closeMenu();
                 break;
@@ -63,7 +65,7 @@ public class RoomMenuView extends View{
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        
+
         return false;
     }
 
@@ -91,7 +93,7 @@ public class RoomMenuView extends View{
         InventoryControl.viewInventory(EnnisHillKelloggGame.getInventory());
     }
 
-   /* public String getMenu() {
+    /* public String getMenu() {
         return menu;
     }
     public void setMenu(String menu) {
@@ -103,9 +105,8 @@ public class RoomMenuView extends View{
     public void setPromptMessage(String promptMessage) {
         this.promptMessage = promptMessage;
     }*/
-
     private void closeMenu() {
         System.out.println("*** closeMenu function called ***");
     }
-    
+
 }

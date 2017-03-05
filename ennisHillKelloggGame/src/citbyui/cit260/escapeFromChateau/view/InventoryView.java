@@ -13,17 +13,37 @@ import java.util.Scanner;
  *
  * @author Heidi Ennis
  */
-public class InventoryView {
+public class InventoryView extends View {
 
-    
-    
-    private String getMenuOption() {
-        System.out.println("\n***  getMenuOption() function called ***");
-        return "N";
-        
+    public InventoryView() {
+        super("\n"
+                + "\nYou are in the Inventory Room"
+                + "\nAnd in here you will be able to"
+                + "\nSee the Inventory of the items"
+                + "\n available to you."
+                + "\n"
+                + "\n------------------------------------"
+                + "\n| Inventory Room Menu                        |"
+                + "\n------------------------------------"
+                + "\nI - Show Inventory"
+                + "\nX - Quit"
+                + "\n------------------------------------");
     }
-private boolean doAction(String menuOption)  {
-    System.out.println("\n*** doAction() function called ***)");
-            return true;
-}       
+
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase(); // convert choice to upper case
+
+        switch (value) {
+            case "I":
+                InventoryView inventoryView = new InventoryView();
+                inventoryView.display();
+                break;
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        }
+
+        return false;
+    }
 }

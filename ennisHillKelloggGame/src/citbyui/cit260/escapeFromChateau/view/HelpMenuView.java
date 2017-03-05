@@ -38,13 +38,13 @@ public class HelpMenuView extends View{
 
         switch (choice) {
             case "C": // clues
-                this.clues();
+        System.out.println("*** Here are some clues ***");
                 break;
             case "P": // how to play
-                this.howToPlay();
+        System.out.println("*** Here's how to Play ***");
                 break;
             case "M": // about movement
-                this.aboutMovement();
+        System.out.println("*** Learn about Movement ***");
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -54,32 +54,4 @@ public class HelpMenuView extends View{
         return false;
     }
 
-    private void clues() {
-        System.out.println("*** clues function called ***");
-       
-    }
-
-    private void howToPlay() {
-        System.out.println("*** beginNewGame function called ***");
-    }
-
-    private void aboutMovement() {
-        System.out.println("*** loadSavedGame function called ***");
-    }
-
-    private void lookAround() {
-        System.out.println("*** lookAround function called ***");
-    }
-
-    private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu function called ***");
-        
-         //display help menu
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.display();
-    }
-
-    //void displayHelpMenuView() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  //  }
-}
+       }

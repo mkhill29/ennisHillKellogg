@@ -1,4 +1,4 @@
-  /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -29,32 +29,38 @@ public class GameMenuView extends View {
                 + "\n| Game Room Menu                        |"
                 + "\n------------------------------------"
                 + "\nI - Show Inventory"
-                + "\nP - Pick Item From Inventory"
-                + "\nL - List Other Rooms"
-                + "\nH - GoTo Other Room"
+                + "\nR - Show Rooms"
+                + "\nA - Action Menu"
+                + "\nN - See Antidotes"
+                + "\nM - Math Stone Menu"
                 + "\nX - Quit"
                 + "\n------------------------------------");
     }
 
-    
-  @Override
+    @Override
     public boolean doAction(String value) {
-       value = value.toUpperCase(); // convert choice to upper case
+        value = value.toUpperCase(); // convert choice to upper case
 
         switch (value) {
-            case "I": // save a game
-                this.showInventory();
+            case "I":
+                InventoryView inventoryView = new InventoryView();
+                inventoryView.display();
                 break;
-            case "P": // begin new game
-                this.pickInventoryItem();
+            case "R": 
+                RoomMenuView roomMenuView = new RoomMenuView();
+                roomMenuView.display();
                 break;
-            case "L": // display help menu
-                this.listRooms();
+            case "A": 
+                ActionMenuView actionMenuView = new ActionMenuView();
+                actionMenuView.display();
                 break;
-            case "G": // display action menu
-                this.goToRoom();
+            case "N": 
+                AntidoteView antidoteView = new AntidoteView();
+                antidoteView.display();
                 break;
-                //TODO need "x"
+            case "M": 
+                MathStoneView mathStoneView = new MathStoneView();
+                mathStoneView.display();
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -62,24 +68,5 @@ public class GameMenuView extends View {
 
         return false;
     }
-    
-    public void showInventory(){
-         System.out.println("\n***showInventory");
 
-    }
-    
-    public void pickInventoryItem(){
-        System.out.println("\n*** pickInventoryItem");
-
-    } 
-    
-    public void listRooms(){
-       System.out.println("\n***listRooms");
-
-    }
-        
-    public void goToRoom(){
-       System.out.println("\n*** goToRoom");
-
-    }
 }

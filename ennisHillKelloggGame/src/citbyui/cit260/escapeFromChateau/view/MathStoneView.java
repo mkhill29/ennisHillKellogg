@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author amikellogg
  */
-public class MathStoneView{
+public class MathStoneView extends View{
     protected String promptMessage;
     
     public MathStoneView(){
@@ -20,6 +20,21 @@ public class MathStoneView{
         this.inputNumbers();
     }
 
+         @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase(); // convert choice to upper case
+
+        switch (value) {
+           //TO DO Put a case switch statement here
+            
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        }
+
+        return false;
+    }
+    
     private void stoneMessage() {
         System.out.println("\n**********************************"
                            +"\nYou've come across a stone that"

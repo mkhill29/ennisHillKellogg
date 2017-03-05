@@ -7,15 +7,16 @@ package citbyui.cit260.escapeFromChateau.view;
 
 import byui.cit260.escapeFromChateau.control.GameControl;
 import ennishillkellogggame.EnnisHillKelloggGame;
+
 /**
  * @author Heidi Ennis
  */
-public class MainMenuView extends View{
-   
+public class MainMenuView extends View {
+
     protected String promptMessage;
 
     public MainMenuView() {
-            super("\n"
+        super("\n"
                 + "\n------------------------------------"
                 + "\n| Main Menu                        |"
                 + "\n------------------------------------"
@@ -23,30 +24,27 @@ public class MainMenuView extends View{
                 + "\nB - Begin New Game"
                 + "\nL - Load Saved Game"
                 + "\nH - Help"
-                + "\nA - Action Menu"
                 + "\nX - Quit"
                 + "\n------------------------------------");
     }
-    
+
     @Override
     public boolean doAction(String value) {
-       value = value.toUpperCase(); // convert choice to upper case
+        value = value.toUpperCase(); // convert choice to upper case
 
         switch (value) {
             case "S": // save a game
                 this.saveCurrentGame();
                 break;
             case "B": // begin new game
-                this.beginNewGame();
+                GameMenuView gameMenuView = new GameMenuView();
+                gameMenuView.display();
                 break;
             case "L": // load game
                 this.loadSavedGame();
                 break;
             case "H": // display help menu
                 this.displayHelpMenu();
-                break;
-            case "A": // display action menu
-                this.displayActionMenu();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -70,9 +68,8 @@ public class MainMenuView extends View{
     }
 
     private void loadSavedGame() {
-        GameControl.loadSavedGame(EnnisHillKelloggGame.getSavedGame());
-        
-     
+      GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void displayHelpMenu() {
