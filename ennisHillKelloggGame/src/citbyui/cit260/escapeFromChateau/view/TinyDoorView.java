@@ -14,7 +14,7 @@ import static jdk.nashorn.tools.ShellFunctions.input;
  *
  * @author Kristine Hill
  */
-public class TinyDoorView extends View {
+public class TinyDoorView {
 
     protected final String promptMessage;
     private double minutesPerOunce;
@@ -39,17 +39,46 @@ public class TinyDoorView extends View {
                 + "\n of fuel, how many times will you need to*"
                 + "\n fill it to have light for 16 hours?*"
                 + "\n*************************************************";
+    }
+
+    public void displayPromptMessage() {
+
+        boolean correct = false;
+
+        while (!correct) {
+            System.out.println("\n" + this.promptMessage);
+            String input = this.getInput();
+
+            //do the requested action and display the next view
+            correct = this.doAction(input);
+            if (!correct) {
+                System.out.println("\nIncorrect - TRY AGAIN\n");
+            }
         }
-   
+    }
 
-    
-                
+    private String getInput() {
+        Scanner keyboard = new Scanner(System.in); //get infile for Keyboard
+        String value = ""; //value to be returned
 
-    public boolean doAction(String choice) {
-        
-        int playerAnswer = Integer.parseInt(choice);
-        
+        value = keyboard.nextLine(); //get next line typed on keyboard
+        value = value.trim(); //trim off leading and trailing blanks
+
+        return value; //return entered value
+
+    }
+
+    private boolean doAction(String input) {
+        String choice = input;        
+        double playerAnswer = Double.parseDouble(choice);
+
         MathTinyDoorControl mtdc = new MathTinyDoorControl();
         return mtdc.calcFuelFills(minutesPerOunce, fuelCapacity, burnTime, playerAnswer);
+    }
 }
-}
+
+
+
+    
+
+        
