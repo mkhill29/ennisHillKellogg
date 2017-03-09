@@ -12,12 +12,17 @@ package citbyui.cit260.escapeFromChateau.view;
 public class AntidoteView extends View{
     
     public AntidoteView(){
-            super("\n"
-                + "\n------------------------------------"
-                + "\n| Antidote Menu                       |"
-                + "\n------------------------------------"
-                + "\n This is the Antidote Menu"
-                + "\n------------------------------------");
+            super("\n************************************************"
+                + "\nOh no! You are shrinking! The bottle of         "
+                + "\nmysterious liquid contained poison. You will    "
+                + "\ndisappear and die unless you can quickly figure "
+                + "\nthe volume of water required to fill the room   "
+                + "\nhalf full.                                      "
+                + "\nThe formula is 1/2 Volume = width X height/2.   "
+                + "\nYou have 3 minutes.                             "
+                + "\n************************************************");
+            
+            
     }
     
       @Override

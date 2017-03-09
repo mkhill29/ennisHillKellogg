@@ -33,6 +33,7 @@ public class RoomMenuView extends View {
                 + "\nC - Close menu");
     }
 
+    
     public boolean doAction(String choice) {
         choice = choice.toUpperCase(); // convert choice to upper case
         switch (choice) {
