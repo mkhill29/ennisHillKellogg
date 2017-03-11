@@ -12,17 +12,29 @@ import java.util.Objects;
  *
  * @author amikellogg
  */
-public class Item implements Serializable{
-    
+public class Item implements Serializable {
+
     //class instance variables
     private String use;
     private String magicPower;
 
+    public enum PlayerItem {
+        latern("latern"),
+        fork("fork");
+        private final String use;
+
+        PlayerItem(String use) {
+            this.use = use;
+        }
+
+        public String getAmount() {
+            return this.use;
+        }
+    }
+
     public Item() {
     }
 
-    
-    
     public String getUse() {
         return use;
     }
@@ -52,7 +64,6 @@ public class Item implements Serializable{
         return "Item{" + "use=" + use + ", magicPower=" + magicPower + '}';
     }
 
-    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -73,6 +84,5 @@ public class Item implements Serializable{
         }
         return true;
     }
-    
-    
+
 }
