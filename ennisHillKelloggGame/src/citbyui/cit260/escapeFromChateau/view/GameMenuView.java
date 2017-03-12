@@ -69,4 +69,7 @@ public class GameMenuView extends View {
         return false;
     }
 
+    public static void beginNewGame(){
+        
+    }
 }

@@ -37,7 +37,7 @@ public class MainMenuView extends View {
                 this.saveCurrentGame();
                 break;
             case "B": // begin new game
-                this.startNewGame();
+                this.beginNewGame();
 
                 break;
             case "L": // load game
@@ -60,7 +60,10 @@ public class MainMenuView extends View {
     }
 
     private void beginNewGame() {
+        //begin new game
         GameControl.createNewGame(EnnisHillKelloggGame.getPlayer());
+        /*BeginNewGame beginNewGame = new BeginNewGame();
+            beginNewGame.display();*/
 
         //display game menu
         GameMenuView gameMenu = new GameMenuView();
@@ -68,7 +71,7 @@ public class MainMenuView extends View {
     }
 
     private void loadSavedGame() {
-      GameMenuView gameMenu = new GameMenuView();
+        GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
@@ -82,9 +85,4 @@ public class MainMenuView extends View {
         actionMenu.display();
     }
 
-    private void startNewGame() {
-        StartNewGame startNewGame = new StartNewGame();
-        startNewGame.display();
-
-}
 }
