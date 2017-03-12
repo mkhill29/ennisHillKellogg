@@ -37,8 +37,8 @@ public class MainMenuView extends View {
                 this.saveCurrentGame();
                 break;
             case "B": // begin new game
-                GameMenuView gameMenuView = new GameMenuView();
-                gameMenuView.display();
+                this.startNewGame();
+
                 break;
             case "L": // load game
                 this.loadSavedGame();
@@ -82,4 +82,9 @@ public class MainMenuView extends View {
         actionMenu.display();
     }
 
+    private void startNewGame() {
+        StartNewGame startNewGame = new StartNewGame();
+        startNewGame.display();
+
+}
 }
