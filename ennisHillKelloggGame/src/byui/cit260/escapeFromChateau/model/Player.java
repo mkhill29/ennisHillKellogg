@@ -17,6 +17,8 @@ public class Player implements Serializable {
     // class instance variables
     private String name;
     private double inventory;
+    
+    private Player player;
 
     public Player() {
     }
@@ -40,6 +42,16 @@ public class Player implements Serializable {
                
         
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
+    
 
     @Override
     public int hashCode() {

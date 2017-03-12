@@ -19,7 +19,7 @@ public class Item implements Serializable {
     private String magicPower;
 
     public enum PlayerItem {
-        latern("latern"),
+        lantern("lantern"),
         fork("fork");
         private final String use;
 
