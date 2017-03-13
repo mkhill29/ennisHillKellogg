@@ -40,6 +40,9 @@ public class InventoryView extends View {
             case "I":
                 System.out.println(PlayerItem.values() [0]);
                 System.out.println(PlayerItem.values() [1]);
+                System.out.println(PlayerItem.values() [2]);
+                System.out.println(PlayerItem.values() [3]);
+                System.out.println(PlayerItem.values() [4]);
                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
