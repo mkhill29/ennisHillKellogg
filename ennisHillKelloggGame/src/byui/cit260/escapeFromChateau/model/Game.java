@@ -19,20 +19,7 @@ public class Game implements Serializable{
     private double escapesRemaining;
     
     private Item[] item;
-//the above line on 22-31 
-    I just created 3/12/17
-    
-    public Item[] getItem() {
-        return item;
-    }
-    public void setItem(Item[] item) {
-        this.item = item;
-    }
-    public Game() {
-    }
-    
-    
-
+  
     public double getTotalCaptures() {
         return totalCaptures;
     }
