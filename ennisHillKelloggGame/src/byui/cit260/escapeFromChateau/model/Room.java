@@ -25,7 +25,26 @@ public class Room implements Serializable {
 
     public Room() {
     }
+   
+    
+    
+    String[] roomName = 
+            {"Gate House", "Main Hall", "Warden's Office", "Warden's Quarters", "N. Guard Tower"
+            +"\nKitchen", "Pantry", "Larder", "Broom Closet", "Armory"
+            +"\nCell 1", "Cell 2", "Cell 3", "Storage Room", "Guard Room"
+            +"\nCell 4", "Cell 5", "Cell 6", "Dungeon", "Uniform Closet" 
+            +"\nS. Guard Tower", "Guards Head Quarter", "W. Barracks", "E. Barracks"
+           
+          };
 
+    public String[] getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String[] roomName) {
+        this.roomName = roomName;
+    }
+            
     public String getDiscription() {
         return discription;
     }
