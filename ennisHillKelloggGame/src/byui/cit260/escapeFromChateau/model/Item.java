@@ -15,34 +15,32 @@ import java.util.Objects;
 public class Item implements Serializable {
 
     //class instance variables
-    private String use;
+    private String item;
     private String magicPower;
 
     public enum PlayerItem {
         lantern("lantern"),
         fork("fork");
-        private final String use;
+        private final String item;
 
-        PlayerItem(String use) {
-            this.use = use;
+        PlayerItem(String item) {
+            this.item = item;
         }
 
         public String getAmount() {
-            return this.use;
+            return this.item;
         }
     }
 
     public Item() {
+        
     }
 
-    public String getUse() {
-        return use;
+    public String getItem() {
+        return item;
     }
 
-    public void setUse(String use) {
-        this.use = use;
-    }
-
+ 
     public String getMagicPower() {
         return magicPower;
     }
@@ -54,14 +52,14 @@ public class Item implements Serializable {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 17 * hash + Objects.hashCode(this.use);
+        hash = 17 * hash + Objects.hashCode(this.item);
         hash = 17 * hash + Objects.hashCode(this.magicPower);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Item{" + "use=" + use + ", magicPower=" + magicPower + '}';
+        return "Item{" + "use=" + item + ", magicPower=" + magicPower + '}';
     }
 
     @Override
@@ -76,7 +74,7 @@ public class Item implements Serializable {
             return false;
         }
         final Item other = (Item) obj;
-        if (!Objects.equals(this.use, other.use)) {
+        if (!Objects.equals(this.item, other.item)) {
             return false;
         }
         if (!Objects.equals(this.magicPower, other.magicPower)) {
