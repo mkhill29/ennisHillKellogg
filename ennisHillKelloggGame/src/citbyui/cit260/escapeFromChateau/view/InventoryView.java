@@ -6,6 +6,8 @@
 package citbyui.cit260.escapeFromChateau.view;
 
 import byui.cit260.escapeFromChateau.control.GameControl;
+import byui.cit260.escapeFromChateau.model.Item;
+import byui.cit260.escapeFromChateau.model.Item.PlayerItem;
 import ennishillkellogggame.EnnisHillKelloggGame;
 import java.util.Scanner;
 
@@ -36,9 +38,9 @@ public class InventoryView extends View {
 
         switch (value) {
             case "I":
-                InventoryView inventoryView = new InventoryView();
-                inventoryView.display();
-                break;
+                System.out.println(PlayerItem.values() [0]);
+                System.out.println(PlayerItem.values() [1]);
+               break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
