@@ -19,8 +19,8 @@ public class Item implements Serializable {
     private String magicPower;
 
     public enum PlayerItem {
-        Lantern("lantern"),
-        Fork("fork"),
+        Lantern("Lantern"),
+        Fork("Fork"),
         Chickenbone("Chicken bone"),
         Old_soldiers_hat("Old soldiers hat"),
         Rusty_Bowl("RustyBowl");
