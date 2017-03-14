@@ -9,6 +9,10 @@ import byui.cit260.escapeFromChateau.control.GameControl;
 import byui.cit260.escapeFromChateau.model.Item;
 import byui.cit260.escapeFromChateau.model.Item.PlayerItem;
 import ennishillkellogggame.EnnisHillKelloggGame;
+import java.util.ArrayList;
+import static java.util.Collections.list;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -28,6 +32,7 @@ public class InventoryView extends View {
                 + "\n| Inventory Room Menu                        |"
                 + "\n------------------------------------"
                 + "\nI - Show Inventory"
+                + "\nC - Create Inventory"
                 + "\nX - Quit"
                 + "\n------------------------------------");
     }
@@ -38,12 +43,18 @@ public class InventoryView extends View {
 
         switch (value) {
             case "I":
-                System.out.println(PlayerItem.values() [0]);
-                System.out.println(PlayerItem.values() [1]);
-                System.out.println(PlayerItem.values() [2]);
-                System.out.println(PlayerItem.values() [3]);
-                System.out.println(PlayerItem.values() [4]);
-               break;
+                System.out.println(PlayerItem.values()[0]);
+                System.out.println(PlayerItem.values()[1]);
+                System.out.println(PlayerItem.values()[2]);
+                System.out.println(PlayerItem.values()[3]);
+                System.out.println(PlayerItem.values()[4]);
+                break;
+            case "C":
+                List<Item> itemList = createListOfItems();
+                    for (Item item : itemList) {
+                    System.out.println(item.getItem()+item.getMagicPower()+ item.getItemPoints());
+                }
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -51,4 +62,18 @@ public class InventoryView extends View {
 
         return false;
     }
+    //Heidi's work on Array list  57/66
+
+    public List<Item> createListOfItems() {
+
+        List<Item> itemList = new ArrayList<Item>();
+        itemList.add(new Item("Rusty Nail", 100, "invisibility"));
+        itemList.add(new Item("Wrinkled Apple", 200, "strong"));
+        itemList.add(new Item("Barrel", 300, "smart"));
+        itemList.add(new Item("Small vial of mysterious liquid", 400, "surprise"));
+        itemList.add(new Item("Candle", 500, "powerful"));
+
+        return itemList;
+    }
+
 }
