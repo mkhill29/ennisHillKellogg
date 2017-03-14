@@ -17,6 +17,13 @@ public class Item implements Serializable {
     //class instance variables
     private String item;
     private String magicPower;
+    private int itemPoints;
+
+    public Item(String itemDiscription, int itemPoints, String magicPower ) {
+        itemDiscription = this.item;
+        itemPoints = this.itemPoints;
+        magicPower = this.magicPower;
+    }
 
     public enum PlayerItem {
         Lantern("Lantern"),
@@ -24,7 +31,7 @@ public class Item implements Serializable {
         Chickenbone("Chicken bone"),
         Old_soldiers_hat("Old soldiers hat"),
         Rusty_Bowl("RustyBowl");
-        
+
         private final String item;
 
         PlayerItem(String item) {
@@ -36,21 +43,28 @@ public class Item implements Serializable {
         }
     }
 
-    public Item() {
-        
-    }
+    /*public Item() {
+
+    }*/
 
     public String getItem() {
         return item;
     }
 
- 
     public String getMagicPower() {
         return magicPower;
     }
 
     public void setMagicPower(String magicPower) {
         this.magicPower = magicPower;
+    }
+
+    public int getItemPoints() {
+        return itemPoints;
+    }
+
+    public void setItemPoints(int itemPoints) {
+        this.itemPoints = itemPoints;
     }
 
     @Override
@@ -61,10 +75,21 @@ public class Item implements Serializable {
         return hash;
     }
 
-    @Override
+   /* @Override
     public String toString() {
-        return "Item{" + "use=" + item + ", magicPower=" + magicPower + '}';
-    }
+        itemDiscription = this.item;
+        itemPoints = this.itemPoints;
+        magicPower = this.magicPower;
+        //return "Item{" + "use=" + item + ", magicPower=" + magicPower + '}';
+                return "Item{" + "itemDiscription=" + itemDiscription + ", itemPoints=" + itemPoints  + ", magicPower=" + magicPower};
+
+    }*/
+
+    /*@Override
+    public String toString() {
+        return "Item{" + "item=" + item + ", magicPower=" + magicPower + ", itemPoints=" + itemPoints + '}
+        ;
+    }*/
 
     @Override
     public boolean equals(Object obj) {
