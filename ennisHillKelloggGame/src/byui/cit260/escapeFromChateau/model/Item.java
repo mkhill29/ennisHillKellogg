@@ -20,9 +20,9 @@ public class Item implements Serializable {
     private int itemPoints;
 
     public Item(String itemDiscription, int itemPoints, String magicPower ) {
-        itemDiscription = this.item;
-        itemPoints = this.itemPoints;
-        magicPower = this.magicPower;
+        this.item = itemDiscription;
+        this.itemPoints = itemPoints;
+        this.magicPower = magicPower;
     }
 
     public enum PlayerItem {
