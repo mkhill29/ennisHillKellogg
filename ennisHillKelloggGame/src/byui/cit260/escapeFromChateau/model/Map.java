@@ -6,60 +6,84 @@
 package byui.cit260.escapeFromChateau.model;
 
 import java.io.Serializable;
-import java.util.Objects;
+import java.util.Arrays;
 
 /**
  *
  * @author Kristine Hill
  */
-public class Map implements Serializable{
-    
+public class Map implements Serializable {
+
     //class instance variables
-    private String roomName;
-    private double rowCount;
-    private double columnCount;
+    private int rowCount;
+    private int columnCount;
+    private Room[][] rooms;
 
     public Map() {
     }
     
+    public void init(int rows, int cols) {
+        rowCount = rows;
+        columnCount = cols;
+        
+        rooms = new Room[rowCount][columnCount];
+        
+        for(int r = 0; r < rowCount; r++) {
+            for(int c = 0; c < columnCount; c++) {
+                Room hallway = new Room();
+                hallway.setName("Hallway");
+                hallway.setRow(r);
+                hallway.setColumn(c);
+                hallway.setDescription("You are in a boring hallway.");
+                rooms[r][c] = hallway;
+            }
+        }
+        
+        Room cell = new Room();
+        cell.setName("Prison Cell");
+        cell.setRow(0);
+        cell.setColumn(0);
+        cell.setDescription("You are in a dark prison cell.");
+        rooms[0][0] = cell;
+        
+        //TODO fill up the rest of the rooms
+    }
+
+    public Room getRoomAt(int row, int col) {
+        return rooms[row][col];
+    }
     
-
-    public String getRoomName() {
-        return roomName;
-    }
-
-    public void setRoomName(String roomName) {
-        this.roomName = roomName;
-    }
-
-    public double getRowCount() {
+    public int getRowCount() {
         return rowCount;
     }
 
-    public void setRowCount(double rowCount) {
+    public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
 
-    public double getColumnCount() {
+    public int getColumnCount() {
         return columnCount;
     }
 
-    public void setColumnCount(double columnCount) {
+    public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
+    }
+
+    public Room[][] getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(Room[][] rooms) {
+        this.rooms = rooms;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 11 * hash + Objects.hashCode(this.roomName);
-        hash = 11 * hash + (int) (Double.doubleToLongBits(this.rowCount) ^ (Double.doubleToLongBits(this.rowCount) >>> 32));
-        hash = 11 * hash + (int) (Double.doubleToLongBits(this.columnCount) ^ (Double.doubleToLongBits(this.columnCount) >>> 32));
+        int hash = 5;
+        hash = 41 * hash + this.rowCount;
+        hash = 41 * hash + this.columnCount;
+        hash = 41 * hash + Arrays.deepHashCode(this.rooms);
         return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "Map{" + "roomName=" + roomName + ", rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
     }
 
     @Override
@@ -74,18 +98,16 @@ public class Map implements Serializable{
             return false;
         }
         final Map other = (Map) obj;
-        if (Double.doubleToLongBits(this.rowCount) != Double.doubleToLongBits(other.rowCount)) {
+        if (this.rowCount != other.rowCount) {
             return false;
         }
-        if (Double.doubleToLongBits(this.columnCount) != Double.doubleToLongBits(other.columnCount)) {
+        if (this.columnCount != other.columnCount) {
             return false;
         }
-        if (!Objects.equals(this.roomName, other.roomName)) {
+        if (!Arrays.deepEquals(this.rooms, other.rooms)) {
             return false;
         }
         return true;
     }
-    
-    
-    
+
 }

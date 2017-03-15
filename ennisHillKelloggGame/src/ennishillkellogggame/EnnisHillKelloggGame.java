@@ -41,20 +41,25 @@ public class EnnisHillKelloggGame {
     public static Item getInventory() {
         return inventory;
     }
-    
+
     public static void setInventory(Item inventory) {
         EnnisHillKelloggGame.inventory = inventory;
     }
 
     public static void setPlayer(Player player) {
-        
-    //todo set the player for the EnnisHillKellogGame instance
+        EnnisHillKelloggGame.player = player;
+    }
 
-}
-
+    public static void setGame(Game game) {
+        EnnisHillKelloggGame.currentGame = game;
+    }
     
-     /* @param args the command line arguments
- */
+    public static Game getGame() {
+        return EnnisHillKelloggGame.currentGame;
+    }
+    
+    /* @param args the command line arguments
+     */
     public static void main(String[] args) {
 
         // create StartProgramViewOrig and display the start program view
@@ -63,7 +68,7 @@ public class EnnisHillKelloggGame {
     }
 
     public static Game getCurrentGame() {
-       return currentGame;
+        return currentGame;
     }
 
     public static Player getPlayer() {

@@ -7,19 +7,20 @@ package byui.cit260.escapeFromChateau.model;
 
 import java.io.Serializable;
 
-
 /**
  *
  * @author Kristine Hill
  */
-public class Game implements Serializable{
-    
+public class Game implements Serializable {
+
     // Class instance variable
+    private Player player;
+    private Map map;
     private double totalCaptures;
     private double escapesRemaining;
-    
+
     private Item[] item;
-  
+
     public double getTotalCaptures() {
         return totalCaptures;
     }
@@ -34,6 +35,22 @@ public class Game implements Serializable{
 
     public void setEscapesRemaining(double escapesRemaining) {
         this.escapesRemaining = escapesRemaining;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
 
     @Override
@@ -69,7 +86,5 @@ public class Game implements Serializable{
         }
         return true;
     }
-    
-    
-    
+
 }

@@ -6,8 +6,12 @@
 package byui.cit260.escapeFromChateau.control;
 
 import byui.cit260.escapeFromChateau.model.Game;
+import byui.cit260.escapeFromChateau.model.Item;
+import byui.cit260.escapeFromChateau.model.Map;
 import byui.cit260.escapeFromChateau.model.Player;
 import ennishillkellogggame.EnnisHillKelloggGame;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -38,8 +42,29 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+               
+        Game game = new Game();
         
+        game.setPlayer(player);
+        
+        Map map = new Map();
+        map.init(5, 5);
+        
+        //TODO setup items in the map
+        List<Item> itemList = new ArrayList<Item>();
+        itemList.add(new Item("Rusty Nail", 100, "invisibility"));
+        itemList.add(new Item("Wrinkled Apple", 200, "strong"));
+        itemList.add(new Item("Barrel", 300, "smart"));
+        itemList.add(new Item("Small vial of mysterious liquid", 400, "surprise"));
+        itemList.add(new Item("Candle", 500, "powerful"));
+        
+        //TODO setup "puzzles/math problems" in the map
+        
+        game.setMap(map);
+        
+        player.setCurrentRoom(map.getRoomAt(0, 0));
+        
+        EnnisHillKelloggGame.setGame(game);
     }
 
     public static void loadSavedGame(Game savedGame) {

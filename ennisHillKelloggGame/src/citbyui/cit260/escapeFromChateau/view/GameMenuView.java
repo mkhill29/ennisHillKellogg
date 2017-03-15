@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.escapeFromChateau.view;
 
+import byui.cit260.escapeFromChateau.model.Map;
+import byui.cit260.escapeFromChateau.model.Room;
 import ennishillkellogggame.EnnisHillKelloggGame;
 import static java.time.Clock.system;
 import java.util.Scanner;
@@ -46,21 +48,31 @@ public class GameMenuView extends View {
                 InventoryView inventoryView = new InventoryView();
                 inventoryView.display();
                 break;
-            case "R": 
+            case "R":
                 RoomMenuView roomMenuView = new RoomMenuView();
                 roomMenuView.display();
                 break;
-            case "A": 
+            case "A":
                 ActionMenuView actionMenuView = new ActionMenuView();
                 actionMenuView.display();
                 break;
-            case "N": 
+            case "N":
                 AntidoteView antidoteView = new AntidoteView();
                 antidoteView.display();
                 break;
-            case "M": 
+            case "M":
                 MathStoneView mathStoneView = new MathStoneView();
                 mathStoneView.display();
+            case "V":
+                viewCurrentRoom();
+                break;
+            case "C":
+                displayChateau();
+                break;
+            case "U":
+                moveUp();
+                break;
+            //TODO cases for movement for other directions
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -69,7 +81,19 @@ public class GameMenuView extends View {
         return false;
     }
 
-    public static void beginNewGame(){
+    private void viewCurrentRoom() {
+        Room room = EnnisHillKelloggGame.getPlayer().getCurrentRoom();
+
+        System.out.println("You are at: (" + room.getRow() + ", " + room.getColumn() + ")");
+        System.out.println(room.getDescription());
+    }
+    
+    private void displayChateau() {
+        //TODO iterate over all locations in the map and display the "first character of the name" in a "grid"
+        Map map = EnnisHillKelloggGame.getCurrentGame().getMap();
+    }
+
+    private void moveUp() {
         
     }
 }

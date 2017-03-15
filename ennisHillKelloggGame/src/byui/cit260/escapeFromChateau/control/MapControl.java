@@ -5,43 +5,25 @@
  */
 package byui.cit260.escapeFromChateau.control;
 
+import byui.cit260.escapeFromChateau.model.Direction;
+
 /**
  *
  * @author Kristine Hill
  */
-/********************
- * public class MapControl {
-  
-  
-   * public String movement(double row, double column, String direction); {
-        String direction = 
-    
-         if(direction == "north" && row == 0) {
-                 
-            return false; 
-         }
-        if(direction == south && row == 4){
-                
-            return false; 
-        }
-            
-        if(direction == east && column == 4){
-                
-            return false;
-        }
-        if(direction == west && column == 0){
-                
-            return false;
-         
-        }
+public class MapControl {
+
+    public boolean movement(Direction direction) {
+        
+        //First, grab the player's current location
+        
+        //Check the direction and make sure we're not at a "border" and trying to move off the map
+        //If player is trying to move off map, return false
+        
+        //Grab the new location from the map based on direction
+        
+        //Update the player's location with the new location
         
         return true;
-        
-            String location = row "," column;
-        
-         return location
-         
+    }
 }
-    
-}
-************************/ 

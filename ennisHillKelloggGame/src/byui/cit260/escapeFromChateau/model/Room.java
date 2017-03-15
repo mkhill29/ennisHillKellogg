@@ -6,6 +6,7 @@
 package byui.cit260.escapeFromChateau.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -15,27 +16,42 @@ import java.util.Objects;
 public class Room implements Serializable {
 
     /*private attributes;*/
-    private String discription;
-    private String itemsAvailable;
+    private String description;
+    private Item item;
     private String portals;
     private int row;
     private int column;
     private boolean isVisited;
     private String roomType;
+    private String name;
 
     public Room() {
     }
-   
-    
-    
-    String[] roomName = 
-            {"Gate House", "Main Hall", "Warden's Office", "Warden's Quarters", "N. Guard Tower"
-            +"\nKitchen", "Pantry", "Larder", "Broom Closet", "Armory"
-            +"\nCell 1", "Cell 2", "Cell 3", "Storage Room", "Guard Room"
-            +"\nCell 4", "Cell 5", "Cell 6", "Dungeon", "Uniform Closet" 
-            +"\nS. Guard Tower", "Guards Head Quarter", "W. Barracks", "E. Barracks"
-           
-          };
+
+    String[] roomName
+            = {"Gate House", "Main Hall", "Warden's Office", "Warden's Quarters", "N. Guard Tower"
+                + "\nKitchen", "Pantry", "Larder", "Broom Closet", "Armory"
+                + "\nCell 1", "Cell 2", "Cell 3", "Storage Room", "Guard Room"
+                + "\nCell 4", "Cell 5", "Cell 6", "Dungeon", "Uniform Closet"
+                + "\nS. Guard Tower", "Guards Head Quarter", "W. Barracks", "E. Barracks"
+
+            };
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String[] getRoomName() {
         return roomName;
@@ -44,21 +60,13 @@ public class Room implements Serializable {
     public void setRoomName(String[] roomName) {
         this.roomName = roomName;
     }
-            
+
     public String getDiscription() {
-        return discription;
+        return description;
     }
 
     public void setDiscription(String discription) {
-        this.discription = discription;
-    }
-
-    public String getItemsAvailable() {
-        return itemsAvailable;
-    }
-
-    public void setItemsAvailable(String itemsAvailable) {
-        this.itemsAvailable = itemsAvailable;
+        this.description = discription;
     }
 
     public String getPortals() {
@@ -101,16 +109,26 @@ public class Room implements Serializable {
         this.roomType = roomType;
     }
 
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.discription);
-        hash = 53 * hash + Objects.hashCode(this.itemsAvailable);
-        hash = 53 * hash + Objects.hashCode(this.portals);
-        hash = 53 * hash + this.row;
-        hash = 53 * hash + this.column;
-        hash = 53 * hash + (this.isVisited ? 1 : 0);
-        hash = 53 * hash + Objects.hashCode(this.roomType);
+        hash = 37 * hash + Objects.hashCode(this.description);
+        hash = 37 * hash + Objects.hashCode(this.item);
+        hash = 37 * hash + Objects.hashCode(this.portals);
+        hash = 37 * hash + this.row;
+        hash = 37 * hash + this.column;
+        hash = 37 * hash + (this.isVisited ? 1 : 0);
+        hash = 37 * hash + Objects.hashCode(this.roomType);
+        hash = 37 * hash + Objects.hashCode(this.name);
+        hash = 37 * hash + Arrays.deepHashCode(this.roomName);
         return hash;
     }
 
@@ -135,10 +153,7 @@ public class Room implements Serializable {
         if (this.isVisited != other.isVisited) {
             return false;
         }
-        if (!Objects.equals(this.discription, other.discription)) {
-            return false;
-        }
-        if (!Objects.equals(this.itemsAvailable, other.itemsAvailable)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         if (!Objects.equals(this.portals, other.portals)) {
@@ -147,16 +162,16 @@ public class Room implements Serializable {
         if (!Objects.equals(this.roomType, other.roomType)) {
             return false;
         }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.item, other.item)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.roomName, other.roomName)) {
+            return false;
+        }
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Room{" + "discription=" + discription + ", itemsAvailable=" + itemsAvailable + ", portals=" + portals + ", row=" + row + ", column=" + column + ", isVisited=" + isVisited + ", roomType=" + roomType + '}';
-    }
-
-   
-  
-    
-    
 }

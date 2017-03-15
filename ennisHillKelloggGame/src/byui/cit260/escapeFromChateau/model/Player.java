@@ -13,17 +13,24 @@ import java.util.Objects;
  * @author Kristine Hill
  */
 public class Player implements Serializable {
-    
+
     // class instance variables
     private String name;
     private double inventory;
-    
+    private Room currentRoom;
+
     private Player player;
 
     public Player() {
     }
-    
-    
+
+    public Room getCurrentRoom() {
+        return currentRoom;
+    }
+
+    public void setCurrentRoom(Room currentRoom) {
+        this.currentRoom = currentRoom;
+    }
 
     public String getName() {
         return name;
@@ -39,8 +46,7 @@ public class Player implements Serializable {
 
     public void setInventory(double inventory) {
         this.inventory = inventory;
-               
-        
+
     }
 
     public Player getPlayer() {
@@ -50,8 +56,6 @@ public class Player implements Serializable {
     public void setPlayer(Player player) {
         this.player = player;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -86,7 +90,5 @@ public class Player implements Serializable {
         }
         return true;
     }
-    
-    
-    
+
 }
