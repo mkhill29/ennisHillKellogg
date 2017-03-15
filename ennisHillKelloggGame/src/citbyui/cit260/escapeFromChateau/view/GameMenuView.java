@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.escapeFromChateau.view;
 
+import byui.cit260.escapeFromChateau.control.MapControl;
+import byui.cit260.escapeFromChateau.model.Direction;
 import byui.cit260.escapeFromChateau.model.Map;
 import byui.cit260.escapeFromChateau.model.Room;
 import ennishillkellogggame.EnnisHillKelloggGame;
@@ -94,6 +96,12 @@ public class GameMenuView extends View {
     }
 
     private void moveUp() {
-        
+        MapControl mc = new MapControl();
+        boolean success = mc.movement(Direction.UP);
+        if(success) {
+            System.out.println("You moved up one");
+        } else {
+            System.out.println("You cannot do that right now");
+        }
     }
 }

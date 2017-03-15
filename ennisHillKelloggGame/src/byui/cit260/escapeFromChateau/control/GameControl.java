@@ -62,7 +62,7 @@ public class GameControl {
         
         game.setMap(map);
         
-        player.setCurrentRoom(map.getRoomAt(0, 0));
+        player.setCurrentRoom(map.getRoomAt(3, 0));
         
         EnnisHillKelloggGame.setGame(game);
     }
