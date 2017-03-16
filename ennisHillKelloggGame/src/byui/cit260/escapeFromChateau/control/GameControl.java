@@ -51,6 +51,7 @@ public class GameControl {
         Map map = new Map();
         map.init(5, 5);
         
+        player.setCurrentRoom(map.getRoomAt(0, 0));
         //TODO setup items in the map
         List<Item> itemList = new ArrayList<Item>();
         itemList.add(new Item("Rusty Nail", 100, "invisibility"));
