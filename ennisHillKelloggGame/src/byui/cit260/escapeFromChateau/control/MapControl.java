@@ -33,6 +33,8 @@ public class MapControl {
             Room newRoom = map.getRoomAt(currentRoom.getRow() - 1, currentRoom.getColumn());
             //Update the player's location with the new location
             EnnisHillKelloggGame.getPlayer().setCurrentRoom(newRoom);
+            
+            
         }
         
         return true;

@@ -8,6 +8,7 @@ package byui.cit260.escapeFromChateau.control;
 import byui.cit260.escapeFromChateau.model.Game;
 import byui.cit260.escapeFromChateau.model.Item;
 import byui.cit260.escapeFromChateau.model.Map;
+import byui.cit260.escapeFromChateau.model.MathTwo;
 import byui.cit260.escapeFromChateau.model.Player;
 import ennishillkellogggame.EnnisHillKelloggGame;
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class GameControl {
     public static void createNewGame(Player player) {
                
         Game game = new Game();
-        
+        //1st thing to do
         game.setPlayer(player);
         
         Map map = new Map();
@@ -59,7 +60,7 @@ public class GameControl {
         itemList.add(new Item("Candle", 500, "powerful"));
         
         //TODO setup "puzzles/math problems" in the map
-        
+       // itemList.add(new Item(MathTwo));
         game.setMap(map);
         
         player.setCurrentRoom(map.getRoomAt(3, 0));
