@@ -32,6 +32,7 @@ public class GameMenuView extends View {
                 + "\n------------------------------------"
                 + "\n| Game Room Menu                        |"
                 + "\n------------------------------------"
+                + "\nC - Display Chateau Map"
                 + "\nI - Show Inventory"
                 + "\nR - Show Rooms"
                 + "\nA - Action Menu"
@@ -65,6 +66,7 @@ public class GameMenuView extends View {
             case "M":
                 MathStoneView mathStoneView = new MathStoneView();
                 mathStoneView.display();
+                break;
             case "V":
                 viewCurrentRoom();
                 break;
@@ -74,7 +76,16 @@ public class GameMenuView extends View {
             case "U":
                 moveUp();
                 break;
-            //TODO cases for movement for other directions
+            case "D":
+                moveDown();
+                break;
+            case "L":
+                moveLeft();
+                break;
+            case "T":
+                moveRight();
+                break;
+            
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -91,8 +102,11 @@ public class GameMenuView extends View {
     }
     
     private void displayChateau() {
+       
         //TODO iterate over all locations in the map and display the "first character of the name" in a "grid"
         Map map = EnnisHillKelloggGame.getCurrentGame().getMap();
+        
+       
     }
 
     private void moveUp() {
@@ -103,5 +117,36 @@ public class GameMenuView extends View {
         } else {
             System.out.println("You cannot do that right now");
         }
+    }
+   
+    private void moveLeft() {
+        MapControl mc = new MapControl();
+        boolean success = mc.movement(Direction.DOWN);
+        if(success) {
+            System.out.println("You moved down one");
+        } else {
+            System.out.println("You cannot do that right now");
+        }
+    }
+
+    private void moveRight() {
+        MapControl mc = new MapControl();
+        boolean success = mc.movement(Direction.LEFT);
+        if(success) {
+            System.out.println("You moved left one");
+        } else {
+            System.out.println("You cannot do that right now");
+        }
+    }
+    
+     private void moveDown() {
+        MapControl mc = new MapControl();
+        boolean success = mc.movement(Direction.RIGHT);
+        if(success) {
+            System.out.println("You moved right one");
+        } else {
+            System.out.println("You cannot do that right now");
+        }
+        
     }
 }

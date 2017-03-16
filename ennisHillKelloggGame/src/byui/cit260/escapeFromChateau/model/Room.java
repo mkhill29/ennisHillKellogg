@@ -28,12 +28,12 @@ public class Room implements Serializable {
     public Room() {
     }
 
-    String[] roomName
-            = {"Gate House", "Main Hall", "Warden's Office", "Warden's Quarters", "N. Guard Tower"
-                + "\nKitchen", "Pantry", "Larder", "Broom Closet", "Armory"
-                + "\nCell 1", "Cell 2", "Cell 3", "Storage Room", "Guard Room"
-                + "\nCell 4", "Cell 5", "Cell 6", "Dungeon", "Uniform Closet"
-                + "\nS. Guard Tower", "Guards Head Quarter", "W. Barracks", "E. Barracks"
+    String[][] roomName =
+              {{"Gate House", "Main Hall", "Warden's Office", "Warden's Quarters", "N. Guard Tower"},
+               {"Kitchen", "Pantry", "Larder", "Broom Closet", "Armory"},
+               {"Cell 1", "Cell 2", "Cell 3", "Storage Room", "Guard Room"},
+               {"Cell 4", "Cell 5", "Cell 6", "Dungeon", "Uniform Closet"},
+               {"S. Guard Tower", "Guards HeadQuarter", "W. Barracks", "E. Barracks", "E. Guard Tower"}
 
             };
 
@@ -53,11 +53,11 @@ public class Room implements Serializable {
         this.name = name;
     }
 
-    public String[] getRoomName() {
+    public String[][] getRoomName() {
         return roomName;
     }
 
-    public void setRoomName(String[] roomName) {
+    public void setRoomName(String[][] roomName) {
         this.roomName = roomName;
     }
 
