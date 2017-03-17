@@ -85,7 +85,7 @@ public class GameMenuView extends View {
             case "T":
                 moveRight();
                 break;
-            
+
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -100,29 +100,45 @@ public class GameMenuView extends View {
         System.out.println("You are at: (" + room.getRow() + ", " + room.getColumn() + ")");
         System.out.println(room.getDescription());
     }
-    
+
     private void displayChateau() {
-       
+
         //TODO iterate over all locations in the map and display the "first character of the name" in a "grid"
         Map map = EnnisHillKelloggGame.getCurrentGame().getMap();
-        
-       
+       /* System.out.println("*************************************"
+                + "\n   Map of Chateau de la Miserie    "
+                + "\n***********************************"
+                + "\n___0______1______2______3______4___");
+        int i;
+
+        for (int i = 0; i < roomName.length; i++) {
+            System.out.println("|    " + ??????? +"   ");
+            }
+                for (int j = 0; j < roomName[i].length; j++) {
+        }
+        if (roomName.length > 3){ 
+            System.out.println("|   " + ??????? + "   |");
+                //how do I print out just the first letter? add a | to the last column?
+        }
+    
+
+    */
     }
 
     private void moveUp() {
         MapControl mc = new MapControl();
         boolean success = mc.movement(Direction.UP);
-        if(success) {
+        if (success) {
             System.out.println("You moved up one");
         } else {
             System.out.println("You cannot do that right now");
         }
     }
-   
+
     private void moveLeft() {
         MapControl mc = new MapControl();
         boolean success = mc.movement(Direction.DOWN);
-        if(success) {
+        if (success) {
             System.out.println("You moved down one");
         } else {
             System.out.println("You cannot do that right now");
@@ -132,21 +148,21 @@ public class GameMenuView extends View {
     private void moveRight() {
         MapControl mc = new MapControl();
         boolean success = mc.movement(Direction.LEFT);
-        if(success) {
+        if (success) {
             System.out.println("You moved left one");
         } else {
             System.out.println("You cannot do that right now");
         }
     }
-    
-     private void moveDown() {
+
+    private void moveDown() {
         MapControl mc = new MapControl();
         boolean success = mc.movement(Direction.RIGHT);
-        if(success) {
+        if (success) {
             System.out.println("You moved right one");
         } else {
             System.out.println("You cannot do that right now");
         }
-        
+
     }
 }
