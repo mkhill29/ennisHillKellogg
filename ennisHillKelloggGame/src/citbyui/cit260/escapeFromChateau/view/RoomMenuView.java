@@ -55,11 +55,7 @@ public class RoomMenuView extends View {
             case "I": // View inventory
                 this.viewInventory();
                 break;
-            case "T": 
-                TinyDoorView tinyDoorView = new TinyDoorView();
-                tinyDoorView.displayPromptMessage();
-                break;
-            case "C": // Close menu
+               case "C": // Close menu
                 this.closeMenu();
                 break;
             default:

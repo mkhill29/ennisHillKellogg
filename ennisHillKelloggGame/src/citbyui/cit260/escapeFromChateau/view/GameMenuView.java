@@ -39,6 +39,7 @@ public class GameMenuView extends View {
                 + "\nN - See Antidotes"
                 + "\nM - Math Stone Menu"
                 + "\nK - Math Lock Menu"
+                + "\nY -Tiny Door Menu"
                 + "\nX - Quit"
                 + "\n------------------------------------");
     }
@@ -71,6 +72,10 @@ public class GameMenuView extends View {
              case "K":
                 MathLockView mathLockView = new MathLockView();
                 mathLockView.display();
+                break;
+             case "Y": 
+                TinyDoorView tinyDoorView = new TinyDoorView();
+                tinyDoorView.display();
                 break;
             case "V":
                 viewCurrentRoom();
