@@ -8,7 +8,7 @@ package byui.cit260.escapeFromChateau.control;
 import byui.cit260.escapeFromChateau.model.Game;
 import byui.cit260.escapeFromChateau.model.Item;
 import byui.cit260.escapeFromChateau.model.Map;
-import byui.cit260.escapeFromChateau.model.MathTwo;
+import byui.cit260.escapeFromChateau.model.Math3;
 import byui.cit260.escapeFromChateau.model.Player;
 import ennishillkellogggame.EnnisHillKelloggGame;
 import java.util.ArrayList;

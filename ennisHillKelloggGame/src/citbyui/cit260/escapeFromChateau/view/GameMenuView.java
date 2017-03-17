@@ -38,7 +38,7 @@ public class GameMenuView extends View {
                 + "\nA - Action Menu"
                 + "\nN - See Antidotes"
                 + "\nM - Math Stone Menu"
-                + "\nL - Math Lock Menu"
+                + "\nK - Math Lock Menu"
                 + "\nX - Quit"
                 + "\n------------------------------------");
     }

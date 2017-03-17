@@ -6,7 +6,7 @@
 package ennishillkellogggame;
 
 import static byui.cit260.escapeFromChateau.control.GameControl.clues;
-import byui.cit260.escapeFromChateau.model.MathTwo;
+import byui.cit260.escapeFromChateau.model.Math3;
 import byui.cit260.escapeFromChateau.model.Game;
 import byui.cit260.escapeFromChateau.model.Map;
 import byui.cit260.escapeFromChateau.model.Math;

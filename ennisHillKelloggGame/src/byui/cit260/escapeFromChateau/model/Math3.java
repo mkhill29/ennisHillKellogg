@@ -11,14 +11,14 @@ import java.io.Serializable;
  *
  * @author Heidi Ennis
  */
-public class MathTwo implements Serializable{
+public class Math3 implements Serializable{
     
     //class instance variables
     private double triangleLockSideA;
     private double triangleLockSideB;
     private double trianlgeLockSideC;
 
-    public MathTwo() {
+    public Math3() {
     }
 
     public double getTriangleLockSideA() {
@@ -66,7 +66,7 @@ public class MathTwo implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final MathTwo other = (MathTwo) obj;
+        final Math3 other = (Math3) obj;
         if (Double.doubleToLongBits(this.triangleLockSideA) != Double.doubleToLongBits(other.triangleLockSideA)) {
             return false;
         }

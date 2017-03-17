@@ -37,8 +37,7 @@ public class MathLockView extends View {
                 + "\nFor example, If a triangle has one side that is 12 feet and one side "
                 + "\nthat by is 9 feet, and one side that is 22 feet, long, then you need to  "
                 + "\ncalculate half of the perimeter."
-                + "\nEnter you answer!"
-                + "\n************************************************";//To change body of generated methods, choose Tools | Templates.
+                + "\n************************************************";
 
         this.displayMessage += ("\nThe lock's sideA is " + triangleLockSideA);
         this.displayMessage += ("\nThe lock's sideB is " + triangleLockSideB);
