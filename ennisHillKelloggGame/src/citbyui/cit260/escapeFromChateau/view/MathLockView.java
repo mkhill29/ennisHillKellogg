@@ -33,7 +33,6 @@ public class MathLockView extends View {
         this.displayMessage = "\n************************************************"
                 + "\nTo enter the Armory, you must enter a four digit code into the key pad. "
                 + "\nThe code can only be obtained by answering a math question. "
-                + "\n "
                 + "\nFor example, If a triangle has one side that is 12 feet and one side "
                 + "\nthat by is 9 feet, and one side that is 22 feet, long, then you need to  "
                 + "\ncalculate half of the perimeter."
