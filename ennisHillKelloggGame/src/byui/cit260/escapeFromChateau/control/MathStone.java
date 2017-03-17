@@ -10,34 +10,24 @@ package byui.cit260.escapeFromChateau.control;
  * @author Kristine Hill
  */
 public class MathStone {
-    double surfaceArea(double length, double width, double height){
+    public double surfaceArea(double length, double width, double height){
        
-        if (length == 5 || width == 4 || height == 7){
-            return 166;
+        if (length < 0 || length > 99) { //length out of range?
+
+            return -1;
+        }
+            if (width < 0 || width > 99) { //width out of range?
+
+            return -1;
+        }
+
+               if (height < 0 || height > 99) { //height out of range?
+
+            return -1;
         }
         
-        if (length == 4 || width == 7 || height == 5){ //wrong order
-           return 166; 
-        }
-        
-        if (length == 7 || width == 5 || height == 4){ //wrong order
-            return 166;
-        }
-        
-        if (length == 5 || width == 7 || height == 4){ //wrong order
-            return 166;
-        }
-        
-        if (length == 4 || width == 5 || height == 7){ //wrong order
-            return 166;
-        }
-        
-        if (length == 7 || width == 4 || height == 5){ //wrong order
-            return 166;
-        }
-        
-        double surfaceArea = 2*(length* width) + 2*(width * height) + 2*(length * height);
-            return surfaceArea;
+        double area = 2*(length* width) + 2*(width * height) + 2*(length * height);
+            return area;
     }
 
 }
