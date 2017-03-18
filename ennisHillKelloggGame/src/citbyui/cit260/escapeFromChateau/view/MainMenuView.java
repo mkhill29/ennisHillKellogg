@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,6 +7,7 @@
 package citbyui.cit260.escapeFromChateau.view;
 
 import byui.cit260.escapeFromChateau.control.GameControl;
+import citbyui.cit260.escapeFromChateau.exceptions.MapControlException;
 import ennishillkellogggame.EnnisHillKelloggGame;
 
 /**
@@ -61,10 +63,20 @@ public class MainMenuView extends View {
 
     private void beginNewGame() {
         //begin new game
+        try {
         GameControl.createNewGame(EnnisHillKelloggGame.getPlayer());
         /*BeginNewGame beginNewGame = new BeginNewGame();
             beginNewGame.display();*/
-
+        } catch (MapControlException | GameControlException mce) {
+            System.out.println(mce.getMessage());
+            return;
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            return;
+         } finally {
+            System.out.close();
+        }
         //display game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();

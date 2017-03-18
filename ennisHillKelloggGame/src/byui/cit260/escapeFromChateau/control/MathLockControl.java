@@ -11,21 +11,20 @@ package byui.cit260.escapeFromChateau.control;
  */
 public class MathLockControl {
 
-    public double halfTotalPerimeter(double triangleLockSideA, double triangleLockSideB, double triangleLockSideC) {
-
+    public static void halfTotalPerimeter(double triangleLockSideA, double triangleLockSideB, double triangleLockSideC) 
+                            throws MathLockControlException { 
         if (triangleLockSideA > 99 || triangleLockSideA <= 0) {  //width out of range?
-            return -1;
+         throw new MathLockControlException("Number cannot be between 1 and 99!");
         }
 
         if (triangleLockSideB <= 0 || triangleLockSideB > 99) { //length out of range?
-
-            return -1;
-        }
+              }
 
         if (triangleLockSideC < 0 || triangleLockSideC > 99) { //length out of range?
 
-            return -1;
         }
+        }
+        
         double halfPerimeter = (triangleLockSideA + triangleLockSideB + triangleLockSideC) / 2;
 
         return halfPerimeter;
