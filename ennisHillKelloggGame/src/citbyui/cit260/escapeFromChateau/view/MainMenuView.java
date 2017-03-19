@@ -72,10 +72,10 @@ public class MainMenuView extends View {
             return;
         } catch (Throwable te) {
             System.out.println(te.getMessage());
-            te.printStackTrace();
+           te.printStackTrace();
             return;
-         } finally {
-            System.out.close();
+            } finally {
+           System.out.close();
         }
         //display game menu
         GameMenuView gameMenu = new GameMenuView();

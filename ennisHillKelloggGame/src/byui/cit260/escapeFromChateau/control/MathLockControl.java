@@ -5,6 +5,8 @@
  */
 package byui.cit260.escapeFromChateau.control;
 
+import citbyui.cit260.escapeFromChateau.exceptions.MathLockControlException;
+
 /**
  *
  * @author Heidi Ennis
