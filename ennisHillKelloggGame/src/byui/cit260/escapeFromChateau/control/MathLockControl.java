@@ -13,22 +13,24 @@ import citbyui.cit260.escapeFromChateau.exceptions.MathLockControlException;
  */
 public class MathLockControl {
 
-    public static void halfTotalPerimeter(double triangleLockSideA, double triangleLockSideB, double triangleLockSideC) 
-                            throws MathLockControlException { 
+    public static double halfTotalPerimeter(double triangleLockSideA, double triangleLockSideB, double triangleLockSideC)
+            throws MathLockControlException {
+
+        double halfPerimeter = (triangleLockSideA + triangleLockSideB + triangleLockSideC) / 2;
+
         if (triangleLockSideA > 99 || triangleLockSideA <= 0) {  //width out of range?
-         throw new MathLockControlException("Number cannot be between 1 and 99!");
+            throw new MathLockControlException("Number cannot be between 1 and 99!");
         }
 
         if (triangleLockSideB <= 0 || triangleLockSideB > 99) { //length out of range?
-              }
+        }
 
         if (triangleLockSideC < 0 || triangleLockSideC > 99) { //length out of range?
 
         }
-        }
-        
-        double halfPerimeter = (triangleLockSideA + triangleLockSideB + triangleLockSideC) / 2;
 
         return halfPerimeter;
+
     }
+
 }

@@ -6,6 +6,7 @@
 package citbyui.cit260.escapeFromChateau.view;
 
 import byui.cit260.escapeFromChateau.control.MathLockControl;
+import citbyui.cit260.escapeFromChateau.exceptions.MathLockControlException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -81,11 +82,18 @@ public class MathLockView extends View {
     @Override
     public boolean doAction(String playerAnswer) {
         MathLockControl mac = new MathLockControl();
+        double correctAnswer = 0;
+        try {
+            correctAnswer = mac.halfTotalPerimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
+        } catch (MathLockControlException mlce) {
+            mlce.printStackTrace();
 
-        double correctAnswer = mac.halfTotalPerimeter(triangleLockSideA, triangleLockSideB, triangleLockSideC);
+        }
         double playerAnswerNumber = Double.parseDouble(playerAnswer);
 
-        return (int) correctAnswer == (int) playerAnswerNumber;
+        // return (int) correctAnswer == (int) playerAnswerNumber;
+        return correctAnswer == playerAnswerNumber;
+
     }
 
 }

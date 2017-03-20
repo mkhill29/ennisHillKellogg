@@ -9,7 +9,7 @@ package citbyui.cit260.escapeFromChateau.exceptions;
  *
  * @author amikellogg
  */
-public class MathLockControlException {
+public class MathLockControlException extends Exception{
 
     public MathLockControlException(String number_cannot_be_between_1_and_99) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -67,12 +67,11 @@ public class MainMenuView extends View {
         GameControl.createNewGame(EnnisHillKelloggGame.getPlayer());
         /*BeginNewGame beginNewGame = new BeginNewGame();
             beginNewGame.display();*/
-        } catch (MapControlException | GameControlException mce) {
+        } catch (MapControlException mce) {
             System.out.println(mce.getMessage());
             return;
         } catch (Throwable te) {
             System.out.println(te.getMessage());
-           te.printStackTrace();
             return;
             } finally {
            System.out.close();

@@ -10,6 +10,7 @@ import byui.cit260.escapeFromChateau.model.Item;
 import byui.cit260.escapeFromChateau.model.Map;
 import byui.cit260.escapeFromChateau.model.Math3;
 import byui.cit260.escapeFromChateau.model.Player;
+import citbyui.cit260.escapeFromChateau.exceptions.MapControlException;
 import ennishillkellogggame.EnnisHillKelloggGame;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ public class GameControl {
         System.out.println("\n*** getClues stub function called ***");
     }
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws Exception {
                
         Game game = new Game();
         //1st thing to do
