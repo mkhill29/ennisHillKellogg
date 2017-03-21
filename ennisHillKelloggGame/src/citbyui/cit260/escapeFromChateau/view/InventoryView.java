@@ -8,6 +8,7 @@ package citbyui.cit260.escapeFromChateau.view;
 import byui.cit260.escapeFromChateau.control.GameControl;
 import byui.cit260.escapeFromChateau.model.Item;
 import byui.cit260.escapeFromChateau.model.Item.PlayerItem;
+import byui.cit260.escapeFromChateau.model.Room;
 import ennishillkellogggame.EnnisHillKelloggGame;
 import java.util.ArrayList;
 import static java.util.Collections.list;
@@ -33,11 +34,48 @@ public class InventoryView extends View {
                 + "\n------------------------------------"
                 + "\nI - Show Inventory"
                 + "\nC - Create Inventory"
+                + "\nY - List of Rooms"
                 + "\nX - Quit"
                 + "\n------------------------------------");
     }
 
-    @Override
+//    @Override
+//    public boolean doAction(String value) {
+//        value = value.toUpperCase(); // convert choice to upper case
+//
+//        switch (value) {
+//            case "I":
+//                System.out.println(PlayerItem.values()[0]);
+//                System.out.println(PlayerItem.values()[1]);
+//                System.out.println(PlayerItem.values()[2]);
+//                System.out.println(PlayerItem.values()[3]);
+//                System.out.println(PlayerItem.values()[4]);
+//        
+//                break;
+//            case "C":
+//                List<Item> itemList = createListOfItems();
+//                    for (Item item : itemList) {
+//                    System.out.println(item.getItem()+item.getMagicPower()+ item.getItemPoints());
+//                     
+//                break;
+//                    
+////            case "Y":
+////                room<Room> roomName = createListOfRooms();
+////                    for (Room room : roomName) {
+////                    System.out.println(roomName);
+////                    
+////                    }
+////                break;
+//        } 
+//            default:
+//                System.out.println("\n*** Invalid selection *** Try again");
+//                break;
+//        }
+//                             
+//        return false;
+//    }
+    
+        @Override
     public boolean doAction(String value) {
         value = value.toUpperCase(); // convert choice to upper case
 
@@ -62,7 +100,21 @@ public class InventoryView extends View {
 
         return false;
     }
-    //Heidi's work on Array list  57/66
+  
+    
+
+
+//    public Room<room> createListOfRooms() {
+//
+//        Room<room> roomName = new ArrayList<Room>();
+//        roomName.add(new Room("Cell 1", "Cell 2"));
+//
+//        return roomName;
+//    }
+//
+//
+//    
+//    I don't know what to do here with room -Tim McEwan
 
     public List<Item> createListOfItems() {
 
