@@ -64,8 +64,10 @@ public class MainMenuView extends View {
     private void beginNewGame() {
         //begin new game
         try {
-        GameControl.createNewGame(EnnisHillKelloggGame.getPlayer());
-        /*BeginNewGame beginNewGame = new BeginNewGame();
+            GameControl.createNewGame(EnnisHillKelloggGame.getPlayer());
+            GameMenuView gameMenu = new GameMenuView();
+            gameMenu.display();
+            /*BeginNewGame beginNewGame = new BeginNewGame();
             beginNewGame.display();*/
         } catch (MapControlException mce) {
             System.out.println(mce.getMessage());
@@ -73,12 +75,11 @@ public class MainMenuView extends View {
         } catch (Throwable te) {
             System.out.println(te.getMessage());
             return;
-            } finally {
-           System.out.close();
+        } finally {
+            System.out.close();
         }
         //display game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+
     }
 
     private void loadSavedGame() {

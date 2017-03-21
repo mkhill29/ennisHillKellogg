@@ -6,6 +6,8 @@
 package citbyui.cit260.escapeFromChateau.view;
 
 import byui.cit260.escapeFromChateau.control.MathAntidoteControl;
+import byui.cit260.escapeFromChateau.exceptions.AntidoteException;
+import byui.cit260.escapeFromChateau.exceptions.LoseGameException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -53,7 +55,7 @@ public class AntidoteView extends View {
         if (isCorrect) {
             System.out.println("Nice job!");
         } else {
-            System.out.println("Bad job!");
+            throw new LoseGameException("You drowned in the room");
         }
 
     }
@@ -86,10 +88,16 @@ public class AntidoteView extends View {
     public boolean doAction(String playerAnswer) {
         MathAntidoteControl mac = new MathAntidoteControl();
 
-        double correctAnswer = mac.calcHalfVolume(width, length, height);
-        double playerAnswerNumber = Double.parseDouble(playerAnswer);
+        try {
+            double correctAnswer = mac.calcHalfVolume(width, length, height);
+            double playerAnswerNumber = Double.parseDouble(playerAnswer);
 
-        return (int) correctAnswer == (int) playerAnswerNumber;
+            return (int) correctAnswer == (int) playerAnswerNumber;
+        } catch (AntidoteException ae) {
+            System.out.println(ae.getMessage());
+        }
+        
+        return false;
     }
 
 }
