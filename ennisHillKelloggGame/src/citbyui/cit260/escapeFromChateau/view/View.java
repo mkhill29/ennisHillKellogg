@@ -62,7 +62,7 @@ public abstract class View implements ViewInterface {
             if (selection.length() < 1) { // value is blank
                 System.out.println("\nInvalid value: value cannot be blank");
                 continue;
-// trim off leading and trailing blanks
+                                                                                                    // trim off leading and trailing blanks
             }
              break;   
              
@@ -75,6 +75,6 @@ public abstract class View implements ViewInterface {
          return selection; // return the name
     
          }
-    }
+    
     
      //Heidi working on Page 15---- 3/22/2017 
