@@ -14,6 +14,8 @@ import java.io.PrintWriter;
  */
 public class ErrorView {
         private static final PrintWriter errorFile =  EnnisHillKelloggGame.getOutFile();
+        private static final PrintWriter logFile =  EnnisHillKelloggGame.getLogFile();
+
         
         public static void display(String className, String errorMessage) {
    
@@ -21,5 +23,11 @@ public class ErrorView {
                             "----------------------------------------"
                             + "\n- ERROR - "  + errorMessage
                             + "\n-----------------------------------");
+                //log error 
+                            //Heidi working on Page 9---- 3/22/2017
+            String EnnisHillKelloggGame = null;
+
+                logFile.println(EnnisHillKelloggGame + "-" + errorMessage);
+                
         }
 }
