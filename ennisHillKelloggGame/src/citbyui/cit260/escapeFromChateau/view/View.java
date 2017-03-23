@@ -8,7 +8,7 @@ package citbyui.cit260.escapeFromChateau.view;
 import ennishillkellogggame.EnnisHillKelloggGame;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.util.Scanner;
+
 
 /**
  *
@@ -48,8 +48,7 @@ public abstract class View implements ViewInterface {
 
     }
     @Override
-                //Heidi working on Page 9---- 3/22/2017
-
+         
     public String getInput() {
         boolean valid = false;                                            // initialize to not valid
          String selection = null;                                        // value to be returned
@@ -77,4 +76,4 @@ public abstract class View implements ViewInterface {
          }
     
     
-     //Heidi working on Page 15---- 3/22/2017 
+ 

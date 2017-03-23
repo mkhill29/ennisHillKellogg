@@ -58,25 +58,29 @@ public class MathLockView extends View {
 
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = null; // value to be returned
-        boolean valid = false; // initialize to not valid
+         boolean valid = false;                                                             // initialize to not valid
+        String selection = null;                                                                    // value to be returned
+      try { 
 
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.displayMessage);
+        while (!valid) {     
+            
+            selection = keyboard.readLine();                    // get next line typed on keyboard
+            selection = selection.trim();                                               // trim off leading and trailing blanks
 
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
+             if (selection.length() < 1) { // value is blank
+                System.out.println("You must enter a value.");
                 continue;
-
-            }
-            break; // end the loop
+             }
+       break;
         }
+      
+    } catch (Exception e) {
+                                                                                          // loop while an invalid value is entered
+            System.out.println("Error reading input:" + e.getMessage());
 
-        return value; // return the value entered
+             }
+            
+         return selection; // return the value entered
     }
 
     @Override

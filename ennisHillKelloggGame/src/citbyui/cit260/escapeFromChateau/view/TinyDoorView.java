@@ -6,8 +6,11 @@
 package citbyui.cit260.escapeFromChateau.view;
 
 import byui.cit260.escapeFromChateau.control.MathTinyDoorControl;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 //import static jdk.nashorn.tools.ShellFunctions.input;
 
 /**
@@ -58,33 +61,32 @@ public class TinyDoorView extends View {
     }
         @Override
         public String getInput() {
-        Scanner keyboard = new Scanner(System.in); //get infile for Keyboard
-            String value = null; //value to be returned
-            boolean valid = false;
-
-            while (!valid) { // loop while an invalid value is entered
-                System.out.println("\n" + this.displayMessage);
-
-                value = keyboard.nextLine(); //get next line typed on keyboard
-                value = value.trim(); //trim off leading and trailing blanks
-
-                if (value.length() < 1) { // value is blank
-                    System.out.println("\nInvalid value: value cannot be blank");
+                boolean valid = false;
+                String selection = null;                //value to be returned
+                try {
+                while (!valid) {                                   
+                    // loop while an invalid value is entered
+                    
+                    
+                    selection = this.keyboard.readLine();                 //get next line typed on keyboard
+                    selection = selection.trim();  
+                    
+                    
+                if (selection.length() < 1) { // value is blank
+                  System.out.println("You must enter a value.");
 
                     continue;
-
                 }
-                break; // end the loop
-            }
-            return value; //return entered value
-
+                      break; // end the loop
+                } 
+                  }  catch (Exception e) {
+                    System.out.println("Error reading input: " + e.getMessage());
+                  }                    
+                   return selection; //return entered value
         }
 
         @Override
-        public boolean doAction
-        (String playerAnswer 
-        
-            ) {
+        public boolean doAction(String playerAnswer ) {
         MathTinyDoorControl mtdc = new MathTinyDoorControl();
 
             double correctAnswer = mtdc.calcFuelFills(minutesPerOunce, fuelCapacity, burnTime);

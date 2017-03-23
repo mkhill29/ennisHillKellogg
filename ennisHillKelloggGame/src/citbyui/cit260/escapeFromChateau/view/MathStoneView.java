@@ -55,41 +55,41 @@ public class MathStoneView extends View {
         } else {
             System.out.println("Bad job!");
         }
-
     }
-
     @Override
-
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = null; // value to be returned
-        boolean valid = false; // initialize to not valid
+       boolean valid = false;                                            // initialize to not valid
+        String selection = null;                                        // value to be returned
+       try {
+           
+               while (!valid) {       
+                   
+                   selection = this.keyboard.readLine();                  // get next line typed on keyboard
+                    selection = selection.trim();                                        // trim off leading and trailing blanks
 
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.displayMessage);
-
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-
-            }
-            break; // end the loop
+                    if (selection.length() < 1) {                                                                             // value is blank
+                System.out.println("You must enter a value.");
+                        continue;
+                  }
+                  break; 
+               }
+               } catch (Exception e) {
+                                                                                                                                         // loop while an invalid value is entered
+            System.out.println("Error reading input" + e.getMessage());
+                              
         }
-
-        return value; // return the value entered
-
+        return selection; // return the value entered
     }
+    
 
     @Override
-    public boolean doAction(String playerAnswer) {
+   public boolean doAction(String playerAnswer) {
         MathStone ms = new MathStone();
 
         double correctAnswer = ms.surfaceArea(length, width, height);
         double playerAnswerNumber = Double.parseDouble(playerAnswer);
 
         return (int) correctAnswer == (int) playerAnswerNumber;
-    }
+    
+}
 }

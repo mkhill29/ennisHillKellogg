@@ -10,6 +10,8 @@ import byui.cit260.escapeFromChateau.exceptions.AntidoteException;
 import byui.cit260.escapeFromChateau.exceptions.LoseGameException;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,6 +22,7 @@ public class AntidoteView extends View {
     private int width;
     private int height;
     private int length;
+    private String answer;
 
     public AntidoteView() {
 
@@ -55,49 +58,61 @@ public class AntidoteView extends View {
         if (isCorrect) {
             System.out.println("Nice job!");
         } else {
-            throw new LoseGameException("You drowned in the room");
+            System.out.println("Nice job!");
         }
-
-    }
+            //throw new LoseGameException("You drowned in the room");
+       // }
+       }
 
     @Override
 
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = null; // value to be returned
-        boolean valid = false; // initialize to not valid
+        boolean valid = false;                                  // initialize to not valid
+        String selection = null;                               // value to be returned
+      try {
+        while (!valid) {                                                   // loop while an invalid value is entered
+            
+            selection = this.keyboard.readLine();                         // get next line typed on keyboard
+            selection = selection.trim();                                           // trim off leading and trailing blanks
 
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.displayMessage);
-
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-
-            if (value.length() < 1) { // value is blank
+            if (selection.length() < 1) {                                                               // value is blank
                 System.out.println("\nInvalid value: value cannot be blank");
                 continue;
-
-            }
+}
+            
             break; // end the loop
-        }
+        } 
+      } catch (Exception e) {
+        System.out.println("Error reading input: " + e.getMessage());
+      }
+                     return selection; // return the name
+      }
 
-        return value; // return the value entered
-    }
-
-    @Override
-    public boolean doAction(String playerAnswer) {
+   @Override
+          public boolean doAction(String playerAnswer ) {
         MathAntidoteControl mac = new MathAntidoteControl();
 
+            double correctAnswer = 0;
         try {
-            double correctAnswer = mac.calcHalfVolume(width, length, height);
-            double playerAnswerNumber = Double.parseDouble(playerAnswer);
-
-            return (int) correctAnswer == (int) playerAnswerNumber;
-        } catch (AntidoteException ae) {
-            System.out.println(ae.getMessage());
+            correctAnswer = mac.calcHalfVolume(width, length, height);
+        } catch (AntidoteException ex) {
+            Logger.getLogger(AntidoteView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        return false;
+            double playerAnswerNumber = Double.parseDouble(playerAnswer);
+           
+            return (int) correctAnswer == (int) playerAnswerNumber;
+
+    }
     }
 
-}
+   
+
+   
+    
+
+       
+        
+
+    
+
+

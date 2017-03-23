@@ -27,7 +27,7 @@ public class ErrorView {
                             //Heidi working on Page 9---- 3/22/2017
             String EnnisHillKelloggGame = null;
 
-                logFile.println(EnnisHillKelloggGame + "-" + errorMessage);
+                logFile.println(EnnisHillKelloggGame + " - " + errorMessage);
                 
         }
 }
