@@ -5,6 +5,7 @@
  */
 package byui.cit260.escapeFromChateau.control;
 
+import citbyui.cit260.escapeFromChateau.exceptions.MathLockControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class MathLockControlTest {
      * Test of halfTotalParimeter method, of class MathLockControl.
      */
     @Test
-    public void testHalfTotalPerimeter() {
+    public void testHalfTotalPerimeter() throws MathLockControlException {
 
         System.out.println("\tTest case #1");
         /**

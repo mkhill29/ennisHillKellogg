@@ -8,6 +8,7 @@ package citbyui.cit260.escapeFromChateau.view;
 import ennishillkellogggame.EnnisHillKelloggGame;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
+import java.util.Scanner;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
@@ -50,11 +51,10 @@ public abstract class View implements ViewInterface {
 
     }
 
-    @Override
-
+    /* @Override
     public String getInput() {
         boolean valid = false;                                            // initialize to not valid
-        String selection = null;                                        // value to be returned
+        String selection = null;          // value to be returned
         try {
             while (!valid) {                                                       // loop while an invalid value is entered
                 selection = this.keyboard.readLine();               // get next line typed on keyboard
@@ -71,5 +71,37 @@ public abstract class View implements ViewInterface {
             System.out.println("Error reading input: " + e.getMessage());
         }
         return selection; // return the name
-    }
+    }*/
+    
+     public String getInput() {
+        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        String value = null; // value to be returned
+        boolean valid = false; // initialize to not valid
+
+        while (!valid) { // loop while an invalid value is entered
+            System.out.println("\n" + this.displayMessage);
+
+            value = keyboard.nextLine(); // get next line typed on keyboard
+            valid = true;
+            //try{
+            value = value.trim(); // trim off leading and trailing blanks
+
+            if (value.length() < 1) { // value is blank
+                System.out.println("\nInvalid value: value cannot be blank");
+                continue;
+
+            }
+            
+          //  } catch( Exception e) {
+           // break; // end the loop
+                    
+               //     }
+        
+        }
+        return value; // return the value entered
+    
+     }
 }
+
+ 
+     

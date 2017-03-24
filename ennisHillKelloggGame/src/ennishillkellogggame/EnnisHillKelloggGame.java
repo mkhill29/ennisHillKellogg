@@ -18,7 +18,7 @@ import byui.cit260.escapeFromChateau.model.Math2;
 import byui.cit260.escapeFromChateau.model.Math4;
 import byui.cit260.escapeFromChateau.model.Room;
 import citbyui.cit260.escapeFromChateau.view.StartProgramView;
-import com.sun.istack.internal.logging.Logger;
+//import com.sun.istack.internal.logging.Logger;
 import java.util.logging.Level;
 
 /**
@@ -91,32 +91,35 @@ public class EnnisHillKelloggGame {
     public static Game getGame() {
         return EnnisHillKelloggGame.currentGame;
     }
+    
+        public static void main(String[] args) {
+
+        // create StartProgramViewOrig and display the start program view
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.display();
+    }
 
     /* @param args the command line arguments
      */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
-        
+        EnnisHillKelloggGame.inFile
+                = new BufferedReader(new InputStreamReader(System.in));
 
-            EnnisHillKelloggGame.inFile
-                    = new BufferedReader(new InputStreamReader(System.in));
+        EnnisHillKelloggGame.outFile = new PrintWriter(System.out, true);
 
-            EnnisHillKelloggGame.outFile = new PrintWriter(System.out, true);
+        //Heidi working on Page 9---- 3/22/2017
+        try {
 
-            //Heidi working on Page 9---- 3/22/2017
-            try {
+            String filePath = "log.txt";
+            EnnisHillKelloggGame.logFile = new PrintWriter(filePath);
 
-                String filePath = "log.txt";
-                EnnisHillKelloggGame.logFile = new PrintWriter(filePath);
-
-            
         } catch (Exception e) {
             // create StartProgramViewOrig and display the start program view
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
 
             //return;
-
         } catch (Throwable e) {
 
             System.out.println("Exception: " + e.toString()
@@ -124,25 +127,26 @@ public class EnnisHillKelloggGame {
                     + "\nMessage: " + e.getMessage());
 
             e.printStackTrace();;
-        }
-        finally {
+        } finally {
             try {
-                if (EnnisHillKelloggGame.inFile != null) 
+                if (EnnisHillKelloggGame.inFile != null) {
                     EnnisHillKelloggGame.inFile.close();
-                
-                if (EnnisHillKelloggGame.outFile != null) 
+                }
+
+                if (EnnisHillKelloggGame.outFile != null) {
                     EnnisHillKelloggGame.outFile.close();
-                    
-                  if (EnnisHillKelloggGame.logFile !=null)
-                        EnnisHillKelloggGame.outFile.close();
-                  } catch (IOException ex) {
+                }
+
+                if (EnnisHillKelloggGame.logFile != null) {
+                    EnnisHillKelloggGame.outFile.close();
+                }
+            } catch (IOException ex) {
                 System.out.println("Error closing files");
                 return;
 
             }
         }
-        }
-    
+    }*/
 
     public static Game getCurrentGame() {
         return currentGame;

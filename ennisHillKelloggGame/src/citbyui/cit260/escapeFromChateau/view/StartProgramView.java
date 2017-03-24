@@ -44,8 +44,7 @@ public class StartProgramView extends View {
                 + "\n* the warden! If he catches you,    *"
                 + "\n* you will be beaten and returned   *"
                 + "\n* to your cell.                     *"
-                + "\n*************************************"
-        );
+                + "\n*************************************");
     }
 
    
