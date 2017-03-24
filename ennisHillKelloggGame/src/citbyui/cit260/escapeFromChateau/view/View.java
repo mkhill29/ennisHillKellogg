@@ -57,7 +57,6 @@ public abstract class View implements ViewInterface {
         String selection = null;                                        // value to be returned
         try {
             while (!valid) {                                                       // loop while an invalid value is entered
-
                 selection = this.keyboard.readLine();               // get next line typed on keyboard
                 selection = selection.trim();
 
@@ -68,11 +67,9 @@ public abstract class View implements ViewInterface {
                 }
                 break;
             }
-
         } catch (Exception e) {
-
             System.out.println("Error reading input: " + e.getMessage());
-
-            return selection; // return the name
-
         }
+        return selection; // return the name
+    }
+}
