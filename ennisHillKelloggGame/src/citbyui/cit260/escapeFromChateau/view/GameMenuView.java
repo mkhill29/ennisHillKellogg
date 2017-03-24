@@ -97,7 +97,8 @@ public class GameMenuView extends View {
                 break;
 
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
 
@@ -107,27 +108,27 @@ public class GameMenuView extends View {
     private void viewCurrentRoom() {
         Room room = EnnisHillKelloggGame.getPlayer().getCurrentRoom();
 
-        System.out.println("You are at: (" + room.getRow() + ", " + room.getColumn() + ")");
-        System.out.println(room.getDescription());
+        this.console.println("You are at: (" + room.getRow() + ", " + room.getColumn() + ")");
+        this.console.println(room.getDescription());
     }
 
     private void displayChateau() {
 
         //TODO iterate over all locations in the map and display the "first character of the name" in a "grid"
         Map map = EnnisHillKelloggGame.getCurrentGame().getMap();
-       /* System.out.println("*************************************"
+       /* this.console.println("*************************************"
                 + "\n   Map of Chateau de la Miserie    "
                 + "\n***********************************"
                 + "\n___0______1______2______3______4___");
         int i;
 
         for (int i = 0; i < roomName.length; i++) {
-            System.out.println("|    " + ??????? +"   ");
+            this.console.println("|    " + ??????? +"   ");
             }
                 for (int j = 0; j < roomName[i].length; j++) {
         }
         if (roomName.length > 3){ 
-            System.out.println("|   " + ??????? + "   |");
+            this.console.println("|   " + ??????? + "   |");
                 //how do I print out just the first letter? add a | to the last column?
         }
     
@@ -139,9 +140,9 @@ public class GameMenuView extends View {
         MapControl mc = new MapControl();
         boolean success = mc.movement(Direction.UP);
         if (success) {
-            System.out.println("You moved up one");
+            this.console.println("You moved up one");
         } else {
-            System.out.println("You cannot do that right now");
+            this.console.println("You cannot do that right now");
         }
     }
 
@@ -149,9 +150,9 @@ public class GameMenuView extends View {
         MapControl mc = new MapControl();
         boolean success = mc.movement(Direction.DOWN);
         if (success) {
-            System.out.println("You moved down one");
+            this.console.println("You moved down one");
         } else {
-            System.out.println("You cannot do that right now");
+            this.console.println("You cannot do that right now");
         }
     }
 
@@ -159,9 +160,9 @@ public class GameMenuView extends View {
         MapControl mc = new MapControl();
         boolean success = mc.movement(Direction.LEFT);
         if (success) {
-            System.out.println("You moved left one");
+            this.console.println("You moved left one");
         } else {
-            System.out.println("You cannot do that right now");
+            this.console.println("You cannot do that right now");
         }
     }
 
@@ -169,9 +170,9 @@ public class GameMenuView extends View {
         MapControl mc = new MapControl();
         boolean success = mc.movement(Direction.RIGHT);
         if (success) {
-            System.out.println("You moved right one");
+            this.console.println("You moved right one");
         } else {
-            System.out.println("You cannot do that right now");
+            this.console.println("You cannot do that right now");
         }
 
     }

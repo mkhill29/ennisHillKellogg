@@ -59,7 +59,8 @@ public class RoomMenuView extends View {
                 this.closeMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
 
@@ -67,11 +68,11 @@ public class RoomMenuView extends View {
     }
 
     private void lookAround() {
-        System.out.println("*** lookAround function called ***");
+        this.console.println("*** lookAround function called ***");
     }
 
     private void pickUpItem() {
-        System.out.println("*** pickUpItem function called *** ");
+        this.console.println("*** pickUpItem function called *** ");
     }
 
     private void viewItemFeatures() {
@@ -79,11 +80,11 @@ public class RoomMenuView extends View {
     }
 
     private void addItem() {
-        System.out.println("*** addItem function called *** ");
+        this.console.println("*** addItem function called *** ");
     }
 
     private void useItem() {
-        System.out.println("*** useItem function called ***");
+        this.console.println("*** useItem function called ***");
     }
 
     private void viewInventory() {
@@ -103,7 +104,7 @@ public class RoomMenuView extends View {
         this.promptMessage = promptMessage;
     }*/
     private void closeMenu() {
-        System.out.println("*** closeMenu function called ***");
+        this.console.println("*** closeMenu function called ***");
     }
 
 }

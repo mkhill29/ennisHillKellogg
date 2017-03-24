@@ -38,16 +38,17 @@ public class HelpMenuView extends View{
 
         switch (choice) {
             case "C": // clues
-        System.out.println("*** Here are some clues ***");
+        this.console.println("*** Here are some clues ***");
                 break;
             case "P": // how to play
-        System.out.println("*** Here's how to Play ***");
+        this.console.println("*** Here's how to Play ***");
                 break;
             case "M": // about movement
-        System.out.println("*** Learn about Movement ***");
+        this.console.println("*** Learn about Movement ***");
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
 
