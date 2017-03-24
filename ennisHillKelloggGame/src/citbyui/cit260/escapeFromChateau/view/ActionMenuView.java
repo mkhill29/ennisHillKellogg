@@ -27,7 +27,6 @@ public class ActionMenuView extends View{
                 + "\nB - Go Back"
                 + "\nK - Pick Up Item"
                 + "\nU - Use Item"
-                + "\nB - Go Back"
                 + "\nJ - Jump"
                 + "\nShift + U - Climb Up"
                 + "\nShift + D - Climb Down"
@@ -69,7 +68,8 @@ public class ActionMenuView extends View{
                 this.climbDown();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
 
@@ -77,48 +77,48 @@ public class ActionMenuView extends View{
     }
 
     private void moveEast() {
-        System.out.println("*** moveEast function called ***");
+        this.console.println("*** moveEast function called ***");
        
     }
 
     private void moveNorth() {
-        System.out.println("*** moveNorth function called ***");
+        this.console.println("*** moveNorth function called ***");
     }
 
     private void moveSouth() {
-        System.out.println("*** moveSouth function called ***");
+        this.console.println("*** moveSouth function called ***");
     }
 
     private void moveWest() {
-        System.out.println("*** moveWest function called ***");
+        this.console.println("*** moveWest function called ***");
     }
 
     private void goBack() {
-        System.out.println("*** goBack function called ***");
+        this.console.println("*** goBack function called ***");
     }
     
     private void pickUpItem() {
-        System.out.println("*** pickUpItem function called ***");
+        this.console.println("*** pickUpItem function called ***");
     }
     
     private void useItem() {
-        System.out.println("*** useItem function called ***");
+        this.console.println("*** useItem function called ***");
     }
     
     private void jump() {
-        System.out.println("*** jump function called ***");
+        this.console.println("*** jump function called ***");
     }
     
     private void climbUp() {
-        System.out.println("*** climbUp function called ***");
+        this.console.println("*** climbUp function called ***");
     }
     
     private void climbDown() {
-        System.out.println("*** climbDown function called ***");
+        this.console.println("*** climbDown function called ***");
     }
     
     private void displayActionMenu() {
-        System.out.println("*** displayActionMenu function called ***");
+        this.console.println("*** displayActionMenu function called ***");
         
          //display action menu
         ActionMenuView actionMenu = new ActionMenuView();

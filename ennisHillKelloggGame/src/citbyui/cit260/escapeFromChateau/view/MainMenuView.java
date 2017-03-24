@@ -49,7 +49,8 @@ public class MainMenuView extends View {
                 this.displayHelpMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display("MainMenuView",
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
 
@@ -57,8 +58,17 @@ public class MainMenuView extends View {
     }
 
     private void saveCurrentGame() {
-        // save current game
-        GameControl.saveCurrentGame(EnnisHillKelloggGame.getCurrentGame());
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file path for the file where the game "
+                               + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try{
+            // save the game to the specified file
+        GameControl.saveCurrentGame(EnnisHillKelloggGame.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void beginNewGame() {
@@ -70,19 +80,33 @@ public class MainMenuView extends View {
             /*BeginNewGame beginNewGame = new BeginNewGame();
             beginNewGame.display();*/
         } catch (MapControlException mce) {
-            System.out.println(mce.getMessage());
+            this.console.println(mce.getMessage());
             return;
         } catch (Throwable te) {
-            System.out.println(te.getMessage());
+            this.console.println(te.getMessage());
             return;
         } finally {
-            System.out.close();
+            this.console.close();
         }
         //display game menu
 
     }
 
     private void loadSavedGame() {
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file path for file where the game "
+                            + "is saved.");
+        
+        String filePath = this.getInput();
+        
+        try{
+            //start saved game
+            GameControl.loadSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        //display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }

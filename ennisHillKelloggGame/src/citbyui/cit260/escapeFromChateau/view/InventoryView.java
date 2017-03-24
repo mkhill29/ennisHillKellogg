@@ -45,30 +45,31 @@ public class InventoryView extends View {
 //
 //        switch (value) {
 //            case "I":
-//                System.out.println(PlayerItem.values()[0]);
-//                System.out.println(PlayerItem.values()[1]);
-//                System.out.println(PlayerItem.values()[2]);
-//                System.out.println(PlayerItem.values()[3]);
-//                System.out.println(PlayerItem.values()[4]);
+//                this.console.println(PlayerItem.values()[0]);
+//                this.console.println(PlayerItem.values()[1]);
+//                this.console.println(PlayerItem.values()[2]);
+//                this.console.println(PlayerItem.values()[3]);
+//                this.console.println(PlayerItem.values()[4]);
 //        
 //                break;
 //            case "C":
 //                List<Item> itemList = createListOfItems();
 //                    for (Item item : itemList) {
-//                    System.out.println(item.getItem()+item.getMagicPower()+ item.getItemPoints());
+//                    this.console.println(item.getItem()+item.getMagicPower()+ item.getItemPoints());
 //                     
 //                break;
 //                    
 ////            case "Y":
 ////                room<Room> roomName = createListOfRooms();
 ////                    for (Room room : roomName) {
-////                    System.out.println(roomName);
+////                    this.console.println(roomName);
 ////                    
 ////                    }
 ////                break;
 //        } 
 //            default:
-//                System.out.println("\n*** Invalid selection *** Try again");
+//                ErrorView.display(this.getClass().getName(),
+                        // "\n*** Invalid selection *** Try again");
 //                break;
 //        }
 //                             
@@ -81,20 +82,21 @@ public class InventoryView extends View {
 
         switch (value) {
             case "I":
-                System.out.println(PlayerItem.values()[0]);
-                System.out.println(PlayerItem.values()[1]);
-                System.out.println(PlayerItem.values()[2]);
-                System.out.println(PlayerItem.values()[3]);
-                System.out.println(PlayerItem.values()[4]);
+                this.console.println(PlayerItem.values()[0]);
+                this.console.println(PlayerItem.values()[1]);
+                this.console.println(PlayerItem.values()[2]);
+                this.console.println(PlayerItem.values()[3]);
+                this.console.println(PlayerItem.values()[4]);
                 break;
             case "C":
                 List<Item> itemList = createListOfItems();
                     for (Item item : itemList) {
-                    System.out.println(item.getItem()+item.getMagicPower()+ item.getItemPoints());
+                    this.console.println(item.getItem()+item.getMagicPower()+ item.getItemPoints());
                 }
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
 

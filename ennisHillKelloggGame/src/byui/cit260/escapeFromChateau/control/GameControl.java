@@ -10,8 +10,13 @@ import byui.cit260.escapeFromChateau.model.Item;
 import byui.cit260.escapeFromChateau.model.Map;
 import byui.cit260.escapeFromChateau.model.Math3;
 import byui.cit260.escapeFromChateau.model.Player;
+import citbyui.cit260.escapeFromChateau.exceptions.GameControlException;
 import citbyui.cit260.escapeFromChateau.exceptions.MapControlException;
 import ennishillkellogggame.EnnisHillKelloggGame;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +40,17 @@ public class GameControl {
         return player;
     }
 
-    public static void saveCurrentGame(Game currentGame) {
-        System.out.println("\n*** createNewGame stub function called ***");
+    public static void saveCurrentGame(Game currentGame, String filePath)
+        throws GameControlException {
+        
+        try( FileOutputStream fops = new FileOutputStream(filePath)){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(currentGame);
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
     }
 
     public static void clues(Game currentGame) {
@@ -69,10 +83,21 @@ public class GameControl {
         
         EnnisHillKelloggGame.setGame(game);
     }
-
-    public static void loadSavedGame(Game savedGame) {
-        System.out.println("\n*** loadSavedGame stub function called ***");
-    }
     
+    public static void loadSavedGame(String filePath)
+            throws GameControlException {
+        Game currentGame = null;
+        
+        try( FileInputStream fips = new FileInputStream(filePath)){
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            currentGame = (Game) input.readObject();  //read the game object from file
+        }
+        catch(Exception e) {
+            
+        }
+    // close the output file
+    EnnisHillKelloggGame.setGame(currentGame); // save in EnnisHillKelloggGame
+    }
 }
     

@@ -54,9 +54,9 @@ public class TinyDoorView extends View {
         boolean isCorrect = doAction(answer);
 
         if (isCorrect) {
-            System.out.println("Nice job!");
+            this.console.println("Nice job!");
         } else {
-            System.out.println("Bad job!");
+           this.console.println("Bad job!");
         }
     }
         @Override
@@ -73,14 +73,16 @@ public class TinyDoorView extends View {
                     
                     
                 if (selection.length() < 1) { // value is blank
-                  System.out.println("You must enter a value.");
+                  ErrorView.display(this.getClass().getName(),
+                          "You must enter a value.");
 
                     continue;
                 }
                       break; // end the loop
                 } 
                   }  catch (Exception e) {
-                    System.out.println("Error reading input: " + e.getMessage());
+                    ErrorView.display(this.getClass().getName(),
+                            "Error reading input: " + e.getMessage());
                   }                    
                    return selection; //return entered value
         }
