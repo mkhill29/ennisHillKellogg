@@ -56,9 +56,9 @@ public class AntidoteView extends View {
         boolean isCorrect = doAction(answer);
 
         if (isCorrect) {
-            System.out.println("Nice job!");
+            this.console.println("Nice job!");
         } else {
-            System.out.println("Nice job!");
+            this.console.println("Nice job!");
         }
             //throw new LoseGameException("You drowned in the room");
        // }
@@ -76,14 +76,16 @@ public class AntidoteView extends View {
             selection = selection.trim();                                           // trim off leading and trailing blanks
 
             if (selection.length() < 1) {                                                               // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
+                ErrorView.display(this.getClass().getName(),
+                        "\nInvalid value: value cannot be blank");
                 continue;
 }
             
             break; // end the loop
         } 
       } catch (Exception e) {
-        System.out.println("Error reading input: " + e.getMessage());
+        ErrorView.display(this.getClass().getName(),
+                "Error reading input: " + e.getMessage());
       }
                      return selection; // return the name
       }

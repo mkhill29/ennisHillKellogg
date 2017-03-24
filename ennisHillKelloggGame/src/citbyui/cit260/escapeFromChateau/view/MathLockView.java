@@ -49,9 +49,9 @@ public class MathLockView extends View {
         boolean isCorrect = doAction(answer);
 
         if (isCorrect) {
-            System.out.println("Nice job!");
+            this.console.println("Nice job!");
         } else {
-            System.out.println("Bad job!");
+            this.console.println("Bad job!");
         }
 
     }
@@ -68,7 +68,8 @@ public class MathLockView extends View {
             selection = selection.trim();                                               // trim off leading and trailing blanks
 
              if (selection.length() < 1) { // value is blank
-                System.out.println("You must enter a value.");
+                ErrorView.display(this.getClass().getName(),
+                        "You must enter a value.");
                 continue;
              }
        break;
@@ -76,7 +77,8 @@ public class MathLockView extends View {
       
     } catch (Exception e) {
                                                                                           // loop while an invalid value is entered
-            System.out.println("Error reading input:" + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input:" + e.getMessage());
 
              }
             
