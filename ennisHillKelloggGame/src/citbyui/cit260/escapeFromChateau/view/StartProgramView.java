@@ -26,8 +26,8 @@ public class StartProgramView extends View {
         
     private void displayBanner() {
 
-        this.console.println(
-                "\n***************************************"
+        System.out.println (
+                 "\n***************************************"
                 + "\n*                                   *"
                 + "\n* Welcome to our new game!          *"
                 + "\n* In this game you will play a      *"
@@ -49,6 +49,7 @@ public class StartProgramView extends View {
 
    
 
+    @Override
     public boolean doAction(String playersName) {
 
         if (playersName.length() < 2) {
@@ -74,7 +75,7 @@ public class StartProgramView extends View {
     private void displayNextView(Player player) {
 
         // display a custom welcome message
-        this.console.println("\n================================================="
+        System.out.println("\n================================================="
                 + "\n Welcome to Chateau de la Misèrie, " + player.getName() + "."
                 + "\n You will probably die here unless you manage to escape!"
                 + "\n=========================================================="
