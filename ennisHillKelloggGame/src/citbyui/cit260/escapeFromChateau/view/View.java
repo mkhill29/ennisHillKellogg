@@ -7,6 +7,7 @@ package citbyui.cit260.escapeFromChateau.view;
 
 import ennishillkellogggame.EnnisHillKelloggGame;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -51,30 +52,38 @@ public abstract class View implements ViewInterface {
 
     }
 
-    /* @Override
+    @Override
     public String getInput() {
-        boolean valid = false;                                            // initialize to not valid
-        String selection = null;          // value to be returned
-        try {
-            while (!valid) {                                                       // loop while an invalid value is entered
-                selection = this.keyboard.readLine();               // get next line typed on keyboard
-                selection = selection.trim();
-
-                if (selection.length() < 1) { // value is blank
-                    ErrorView.display(this.getClass().getName(),
-                            "\nInvalid value: value cannot be blank");
-                    continue;
-                    // trim off leading and trailing blanks
+        
+        
+        String input = null;
+        boolean valid = false;
+        
+        while (!valid) {
+            
+            try {
+                //prompt for player input
+                this.console.println(this.displayMessage);
+                
+                input = this.keyboard.readLine();
+                input = input.trim();
+                
+                if (input.length() < 1) {
+                    this.console.println("\nInvalid value: value can not be blank");
                 }
+                
+                
+                
                 break;
+            } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (Exception e) {
-            ErrorView.display(this.getClass().getName(),
-                    "Error reading input: " + e.getMessage());
         }
-        return selection; // return the name
-    }*/
-    
+             
+        return input;
+    }
+
+    /*
      public String getInput() {
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = null; // value to be returned
@@ -103,7 +112,5 @@ public abstract class View implements ViewInterface {
         return value; // return the value entered
     
      }
+     */
 }
-
- 
-     
