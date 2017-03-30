@@ -21,14 +21,12 @@ public class StartProgramView extends View {
 
         super("\nPlease enter your name: ");
 
-     
-
         //display the banner when view is created
         this.displayBanner();
     }
 
     private void displayBanner() {
-       
+
         this.console.println(
                 "\n***************************************"
                 + "\n*                                   *"
@@ -50,6 +48,7 @@ public class StartProgramView extends View {
                 + "\n*************************************");
     }
 
+    @Override
     public boolean doAction(String playersName) {
 
         if (playersName.length() < 2) {
@@ -76,7 +75,7 @@ public class StartProgramView extends View {
 
         // display a custom welcome message
         this.console.println("\n================================================="
-             //   + "\n Welcome to Chateau de la Misèrie, " + player.getName() + "."
+                //   + "\n Welcome to Chateau de la Misèrie, " + player.getName() + "."
                 + "\n You will probably die here unless you manage to escape!"
                 + "\n=========================================================="
         );

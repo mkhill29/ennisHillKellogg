@@ -91,33 +91,29 @@ public class EnnisHillKelloggGame {
     public static Game getGame() {
         return EnnisHillKelloggGame.currentGame;
     }
-    
-        public static void main(String[] args) {
-            
-             EnnisHillKelloggGame.inFile
-                = new BufferedReader(new InputStreamReader(System.in));
 
-        EnnisHillKelloggGame.outFile = new PrintWriter(System.out, true);
-     
-        // create StartProgramViewOrig and display the start program view
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
-    }
+//    public static void main(String[] args) {
+//
+//        // create StartProgramViewOrig and display the start program view
+//        StartProgramView startProgramView = new StartProgramView();
+//        startProgramView.display();
+//    }
 
     /* @param args the command line arguments
      */
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
 
-        EnnisHillKelloggGame.inFile
-                = new BufferedReader(new InputStreamReader(System.in));
-
-        EnnisHillKelloggGame.outFile = new PrintWriter(System.out, true);
+        EnnisHillKelloggGame.inFile = new BufferedReader(new InputStreamReader(System.in));
+        EnnisHillKelloggGame.setOutFile(new PrintWriter(System.out, true));
 
         //Heidi working on Page 9---- 3/22/2017
         try {
-Page 3
+
             String filePath = "log.txt";
-            EnnisHillKelloggGame.logFile = new PrintWriter(filePath);
+            EnnisHillKelloggGame.setLogFile(new PrintWriter(filePath));
+            
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
 
         } catch (Exception e) {
             // create StartProgramViewOrig and display the start program view
@@ -151,7 +147,7 @@ Page 3
 
             }
         }
-    }*/
+    }
 
     public static Game getCurrentGame() {
         return currentGame;
