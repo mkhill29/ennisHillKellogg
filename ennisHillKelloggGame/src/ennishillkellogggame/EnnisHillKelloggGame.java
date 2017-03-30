@@ -93,7 +93,12 @@ public class EnnisHillKelloggGame {
     }
     
         public static void main(String[] args) {
+            
+             EnnisHillKelloggGame.inFile
+                = new BufferedReader(new InputStreamReader(System.in));
 
+        EnnisHillKelloggGame.outFile = new PrintWriter(System.out, true);
+     
         // create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
@@ -110,7 +115,7 @@ public class EnnisHillKelloggGame {
 
         //Heidi working on Page 9---- 3/22/2017
         try {
-
+Page 3
             String filePath = "log.txt";
             EnnisHillKelloggGame.logFile = new PrintWriter(filePath);
 

@@ -18,14 +18,17 @@ public class StartProgramView extends View {
     protected String promptMessage;
 
     public StartProgramView() {
-        
-       super ("\nPlease enter your name: ");
+
+        super("\nPlease enter your name: ");
+
+     
+
         //display the banner when view is created
         this.displayBanner();
     }
-        
-    private void displayBanner() {
 
+    private void displayBanner() {
+       
         this.console.println(
                 "\n***************************************"
                 + "\n*                                   *"
@@ -46,8 +49,6 @@ public class StartProgramView extends View {
                 + "\n* to your cell.                     *"
                 + "\n*************************************");
     }
-
-   
 
     public boolean doAction(String playersName) {
 
@@ -75,7 +76,7 @@ public class StartProgramView extends View {
 
         // display a custom welcome message
         this.console.println("\n================================================="
-                + "\n Welcome to Chateau de la Misèrie, " + player.getName() + "."
+             //   + "\n Welcome to Chateau de la Misèrie, " + player.getName() + "."
                 + "\n You will probably die here unless you manage to escape!"
                 + "\n=========================================================="
         );

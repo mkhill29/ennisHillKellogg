@@ -37,6 +37,10 @@ public class Room implements Serializable {
 
             };
 
+    /*public Room(String gate_House) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+*/
     public String getDescription() {
         return description;
     }

@@ -28,7 +28,7 @@ public class RoomMenuView extends View {
                 + "\nF - View item features"
                 + "\nA - Add item to inventory"
                 + "\nU - Use item"
-                + "\nI - View inventory"
+                + "\nI - View Current inventory"
                 + "\nT -Tiny Door   "
                 + "\nC - Close menu");
     }
