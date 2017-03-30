@@ -32,9 +32,10 @@ public class InventoryView extends View {
                 + "\n------------------------------------"
                 + "\n| Inventory Room Menu                        |"
                 + "\n------------------------------------"
-                + "\nI - Show Inventory"
+                + "\nI - Show Inventory of things in Room"
                 + "\nC - Create Inventory"
                 + "\nY - List of Rooms"
+                + "\nP - Print Inventory"
                 + "\nX - Quit"
                 + "\n------------------------------------");
     }
@@ -69,14 +70,12 @@ public class InventoryView extends View {
 //        } 
 //            default:
 //                ErrorView.display(this.getClass().getName(),
-                        // "\n*** Invalid selection *** Try again");
 //                break;
 //        }
 //                             
 //        return false;
-//    }
-    
-        @Override
+//  }
+    @Override
     public boolean doAction(String value) {
         value = value.toUpperCase(); // convert choice to upper case
 
@@ -90,21 +89,31 @@ public class InventoryView extends View {
                 break;
             case "C":
                 List<Item> itemList = createListOfItems();
-                    for (Item item : itemList) {
-                    this.console.println(item.getItem()+item.getMagicPower()+ item.getItemPoints());
+                for (Item item : itemList) {
+                    this.console.println(item.getItem() + item.getMagicPower() + item.getItemPoints());
                 }
+                break;
+            case "Y":
+                List<Room> roomName = createListOfRooms();
+                for (Room room : roomName) {
+                    this.console.println(roomName);
+
+                }
+                break;
+            case "P":
+             
+                printReport();
+
+                
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),
-                        "\n*** Invalid selection *** Try again");
+                        "\n*** Invalid selection ***");
                 break;
         }
 
         return false;
     }
-  
-    
-
 
 //    public Room<room> createListOfRooms() {
 //
@@ -117,7 +126,6 @@ public class InventoryView extends View {
 //
 //    
 //    I don't know what to do here with room -Tim McEwan
-
     public List<Item> createListOfItems() {
 
         List<Item> itemList = new ArrayList<Item>();
@@ -130,4 +138,18 @@ public class InventoryView extends View {
         return itemList;
     }
 
+    public List<Room> createListOfRooms() {
+
+        List<Room> roomName = new ArrayList<>();
+
+        /*  String[][] roomName =
+             ( "Gate House", "Main Hall", "Warden's Office", "Warden's Quarters", "N. Guard Tower"
+              "Kitchen", "Pantry", "Larder", "Broom Closet", "Armory"
+              "Cell 1", "Cell 2", "Cell 3", "Storage Room", "Guard Room"
+               "Cell 4", "Cell 5", "Cell 6", "Dungeon", "Uniform Closet"
+               "S. Guard Tower", "Guards HeadQuarter", "W. Barracks", "E. Barracks", "E. Guard Tower")
+      return roomName;*/
+        
+        return null;
+    }
 }
