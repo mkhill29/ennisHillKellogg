@@ -35,6 +35,8 @@ public class EnnisHillKelloggGame {
 
     //Heidi working on Page 9---- 3/22/2017
     private static PrintWriter logFile = null;
+    
+    
 
     public static PrintWriter getLogFile() {
         return logFile;
@@ -101,6 +103,7 @@ public class EnnisHillKelloggGame {
 
     /* @param args the command line arguments
      */
+    //static variable below
     public static void main(String[] args) {
 
         EnnisHillKelloggGame.inFile = new BufferedReader(new InputStreamReader(System.in));
@@ -111,7 +114,7 @@ public class EnnisHillKelloggGame {
 
             String filePath = "log.txt";
             EnnisHillKelloggGame.setLogFile(new PrintWriter(filePath));
-            
+
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
 
