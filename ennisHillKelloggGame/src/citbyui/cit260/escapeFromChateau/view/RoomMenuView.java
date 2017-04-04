@@ -30,6 +30,7 @@ public class RoomMenuView extends View {
                 + "\nU - Use item"
                 + "\nI - View Current inventory"
                 + "\nT -Tiny Door   "
+                + "\nR - Print Room List"
                 + "\nC - Close menu");
     }
 
@@ -54,6 +55,9 @@ public class RoomMenuView extends View {
                 break;
             case "I": // View inventory
                 this.viewInventory();
+                break;
+            case "R": // Print list of rooms
+                printReport();
                 break;
                case "C": // Close menu
                 this.closeMenu();
