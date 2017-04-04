@@ -18,7 +18,6 @@ public class Game implements Serializable {
     private Map map;
     private double totalCaptures;
     private double escapesRemaining;
-
     private Item[] item;
 
     public double getTotalCaptures() {
