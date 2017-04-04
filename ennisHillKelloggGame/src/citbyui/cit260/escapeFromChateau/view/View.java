@@ -85,7 +85,7 @@ public abstract class View implements ViewInterface {
         return input;
     }
 
-    public void printReport() {
+    public void printReport() throws IOException {
         Scanner in = new Scanner(System.in);
         String fileName = "";
         String pathName = "";
@@ -104,7 +104,8 @@ public abstract class View implements ViewInterface {
                 actuallyPrintTheReport(fileName, pathName);
 
             } catch (IOException e) {
-
+                System.err.println("exception thrown from printTheReport(): " + e.toString());
+                throw e;
             }
         }
     }
@@ -119,11 +120,12 @@ public abstract class View implements ViewInterface {
             List<Item> itemList = inventoryView.createListOfItems();
 
             for (Item abc : itemList) {
-                writer.write(abc.getItem().toString());
+                writer.write(abc.getItem());
             }
             writer.close();
-        } catch (Exception e) {
-
+        } catch (IOException e) {
+            System.err.println("exception thrown from actuallyPrintTheReport(): " + e.toString());
+            throw e;
         }
 
         String fileToBeRead = pathName + fileName;
