@@ -10,6 +10,7 @@ import byui.cit260.escapeFromChateau.model.Item;
 import byui.cit260.escapeFromChateau.model.Item.PlayerItem;
 import byui.cit260.escapeFromChateau.model.Room;
 import ennishillkellogggame.EnnisHillKelloggGame;
+import java.io.IOException;
 import java.util.ArrayList;
 import static java.util.Collections.list;
 import java.util.Iterator;
@@ -99,11 +100,15 @@ public class InventoryView extends View {
                     this.console.println(roomName);
 
                 }
-                break;
-            case "P":
-             
+                break;                                                   
+            case "P":                                                                                                                                                                                   
+                
+             try{                                                        
                 printReport();
-
+             } catch(IOException e) {
+              System.err.println("printReport() threw an exception!");
+             
+             }
                 
                 break;
             default:
@@ -142,14 +147,12 @@ public class InventoryView extends View {
 
         List<Room> roomName = new ArrayList<>();
 
-        /*  String[][] roomName =
-             ( "Gate House", "Main Hall", "Warden's Office", "Warden's Quarters", "N. Guard Tower"
-              "Kitchen", "Pantry", "Larder", "Broom Closet", "Armory"
-              "Cell 1", "Cell 2", "Cell 3", "Storage Room", "Guard Room"
-               "Cell 4", "Cell 5", "Cell 6", "Dungeon", "Uniform Closet"
-               "S. Guard Tower", "Guards HeadQuarter", "W. Barracks", "E. Barracks", "E. Guard Tower")
-      return roomName;*/
+ Room a = new Room("guard shack");
+ roomName.add(a);
+ Room b = new Room("kitchen");
+ roomName.add(b);
+ 
         
-        return null;
+        return roomName;
     }
 }
