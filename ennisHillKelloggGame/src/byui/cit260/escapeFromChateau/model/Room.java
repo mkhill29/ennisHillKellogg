@@ -28,31 +28,27 @@ public class Room implements Serializable {
     public Room() {
     }
 
-    String[][] roomName =
-              {{"Gate House", "Main Hall", "Warden's Office", "Warden's Quarters", "N. Guard Tower"},
-               {"Kitchen", "Pantry", "Larder", "Broom Closet", "Armory"},
-               {"Cell 1", "Cell 2", "Cell 3", "Storage Room", "Guard Room"},
-               {"Cell 4", "Cell 5", "Cell 6", "Dungeon", "Uniform Closet"},
-               {"S. Guard Tower", "Guards HeadQuarter", "W. Barracks", "E. Barracks", "E. Guard Tower"}
+    String[][] roomName
+            = {{"Gate House", "Main Hall", "Warden's Office", "Warden's Quarters", "N. Guard Tower"},
+            {"Kitchen", "Pantry", "Larder", "Broom Closet", "Armory"},
+            {"Cell 1", "Cell 2", "Cell 3", "Storage Room", "Guard Room"},
+            {"Cell 4", "Cell 5", "Cell 6", "Dungeon", "Uniform Closet"},
+            {"S. Guard Tower", "Guards HeadQuarter", "W. Barracks", "E. Barracks", "E. Guard Tower"}
 
             };
 
     public Room(String kitchen) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    // Ami's copy
+    
     public Room(String gate_House, String string) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    /*public Room(String gate_House) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-*/
+    
     public String getDescription() {
         return description;
     }
-
+    
     public void setDescription(String description) {
         this.description = description;
     }

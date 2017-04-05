@@ -56,6 +56,7 @@ public class RoomMenuView extends View {
                 this.viewInventory();
                 break;
             case "R": // Print list of rooms
+
                 try {
                     printReport();
                 } catch (IOException e) {
