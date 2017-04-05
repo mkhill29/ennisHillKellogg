@@ -98,18 +98,14 @@ public class InventoryView extends View {
                 List<Room> roomName = createListOfRooms();
                 for (Room room : roomName) {
                     this.console.println(roomName);
-
                 }
-                break;                                                   
-            case "P":                                                                                                                                                                                   
-                
-             try{                                                        
-                printReport();
-             } catch(IOException e) {
-              System.err.println("printReport() threw an exception!");
-             
-             }
-                
+                break;
+            case "P":
+                try {
+                    printReport();
+                } catch (IOException e) {
+                    System.err.println("printReport() threw an exception!");
+                }
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),
@@ -147,12 +143,37 @@ public class InventoryView extends View {
 
         List<Room> roomName = new ArrayList<>();
 
- Room a = new Room("guard shack");
- roomName.add(a);
- Room b = new Room("kitchen");
- roomName.add(b);
- 
-        
+        Room a = new Room("guard shack");
+        roomName.add(a);
+        Room b = new Room("kitchen");
+        roomName.add(b);
+
+        roomName.add(new Room("Gate House", "0,0"));
+        roomName.add(new Room("Main Hall", "0,1"));
+        roomName.add(new Room("Warden's Office", "0,2"));
+        roomName.add(new Room("Warden's Quarters", "0,3"));
+        roomName.add(new Room("N Guard Tower", "0,4"));
+        roomName.add(new Room("Kitchen", "1,0"));
+        roomName.add(new Room("Pantry", "1,1"));
+        roomName.add(new Room("Larder", "1,2"));
+        roomName.add(new Room("Broom Closet", "1,3"));
+        roomName.add(new Room("Armory", "1,4"));
+        roomName.add(new Room("Cell 1", "2,0"));
+        roomName.add(new Room("Cell 2", "2,1"));
+        roomName.add(new Room("Cell 3", "2,2"));
+        roomName.add(new Room("Storage Room", "2,3"));
+        roomName.add(new Room("Guard Room", "2,4"));
+        roomName.add(new Room("Cell 4", "3,0"));
+        roomName.add(new Room("Cell 5", "3,1"));
+        roomName.add(new Room("Cell 6", "3,2"));
+        roomName.add(new Room("Dungeon", "3,3"));
+        roomName.add(new Room("Uniform Closet", "3,4"));
+        roomName.add(new Room("S Guard Tower", "4,0"));
+        roomName.add(new Room("Guards Headquarters", "4,1"));
+        roomName.add(new Room("W Barracks", "4,2"));
+        roomName.add(new Room("E Barracks", "4,3"));
+        roomName.add(new Room("E Guard Tower", "4,4"));
+
         return roomName;
     }
 }

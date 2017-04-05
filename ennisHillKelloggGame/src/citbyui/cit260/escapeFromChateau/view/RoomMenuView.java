@@ -7,7 +7,7 @@ package citbyui.cit260.escapeFromChateau.view;
 
 import byui.cit260.escapeFromChateau.control.InventoryControl;
 import ennishillkellogggame.EnnisHillKelloggGame;
-import java.util.Scanner;
+import java.io.IOException;
 
 /**
  *
@@ -30,10 +30,10 @@ public class RoomMenuView extends View {
                 + "\nU - Use item"
                 + "\nI - View Current inventory"
                 + "\nT -Tiny Door   "
+                + "\nR - Print Room List"
                 + "\nC - Close menu");
     }
 
-    
     public boolean doAction(String choice) {
         choice = choice.toUpperCase(); // convert choice to upper case
         switch (choice) {
@@ -55,7 +55,14 @@ public class RoomMenuView extends View {
             case "I": // View inventory
                 this.viewInventory();
                 break;
-               case "C": // Close menu
+            case "R": // Print list of rooms
+                try {
+                    printReport();
+                } catch (IOException e) {
+                    System.err.println("printReport() threw an exception!");
+                }
+                break;
+            case "C": // Close menu
                 this.closeMenu();
                 break;
             default:
